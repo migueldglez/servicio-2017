@@ -1,0 +1,110 @@
+
+
+html,body{
+  font: 100%/1.5 "Roboto", Verdana, sans-serif;
+  margin: 0px;
+  height: 100%;
+  width:100%;
+}
+
+section,.fila1{
+  height: 100%;
+  margin: 0px;
+}
+
+span{
+  display: block;
+  margin: 0 auto;
+  font-size: 120%;
+}
+
+.fila1 .m4{
+  background-color: #c5e1a5;
+  height: 100%;
+
+}
+
+.fila1 .m8{
+  background-color: #e6ee9c;
+  height: 100%;
+}
+
+.Roboto{
+  font-family: 'Roboto', sans-serif;
+}
+
+h1.Roboto{
+  margin-bottom: 1.5rem;
+  letter-spacing: -.05em;
+  font-weight: 200;
+  -webkit-animation-duration: 9s;
+  -webkit-animation-delay: 2s;
+  -webkit-animation-iteration-count: infinite;
+}
+
+h5{
+  margin-bottom: 1.5rem;
+  letter-spacing: -.05em;
+  font-weight: 200;
+}
+
+#igual {
+  margin: 0px 0px !important;
+}
+
+#miembro1 {
+  margin-right: 8px !important;
+}
+
+#miembro2 {
+  margin-left: 8px !important;
+}
+
+/*------------------------------------------------------------------------------
+                   Estilos del input
+--------------------------------------------------------------------------------*/
+
+.input-field label{
+  color: #b9f6ca;
+}
+
+.input-field input[type=text]{
+  border-bottom-color: #b9f6ca;
+}
+
+.input-field input[type=text]:focus + label {
+  color: #ccff90;
+}
+
+.input-field input[type=text]:focus{
+  border-bottom-color: #ccff90;
+}
+
+/*------------------------------------------------------------------------------
+                   Botones
+--------------------------------------------------------------------------------*/
+
+form div a.btn:hover{
+  background-color: #c0ca33 !important;
+}
+
+.tips:hover{
+  background-color: #ef5350 !important;
+}
+
+.next a:hover{
+  background-color: #7986cb !important;
+}
+
+.next a{
+  padding: 0px 18px !important;
+}
+.next a i{
+  margin-left: 10px;
+}
+/*------------------------------------------------------------------------------
+                   Imagen
+--------------------------------------------------------------------------------*/
+.rompecabezas .m12{
+  margin-top: 8%;
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Quix</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,400italic,700italic,700" rel="stylesheet" type="text/css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="materialize/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link rel="stylesheet" href="css/animate.css">
+  </head>
+  <body>
+
+    <section>
+      <div class="row fila1">
+
+        <div class="col m4">
+
+          <div class="row">
+            <h1 class="Roboto center-align animated infinite tada">Ecua-Quix</h1>
+          </div>
+
+          <div class="row">
+            <div class="col m12">
+              <div class="card z-depth-5 green" ><!-- Card-->
+                <div class="card-content white-text">
+
+                  <h5 class="Roboto  blue-text text-lighten-5"> Hallar el valor de X en la siguiente ecuación:</h5>
+
+                  <div class="valign-wrapper">
+                    <span id="miembro1" class="Roboto light-blue-text text-darken-4"></span><!-- Ecuacion-->
+                    <span id="igual" class="Roboto grey-text text-darken-3"></span>
+                    <span id="miembro2" class="Roboto red-text text-darken-1"></span>
+                  </div>
+
+                  <div class="row"><!-- Form-->
+                    <form action="" class="">
+                      <div class="input-field col m6"><!-- Campo de Respuestas-->
+                        <input id="first_name" type="text" class="validate">
+                        <label for="first_name">X = </label>
+                      </div>
+                      <div class="col m6 valign-wrapper">
+                        <a href="#" class="waves-light btn light-green darken-1" style="margin-top:15%;">Enviar</a>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="row">
+                    <div class="col m6">
+                      <a href="#tipsM" class="btn red darken-1 tips">Tips</a>
+                    </div>
+                    <div class="col m6 next">
+                      <a id="siguiente" href="#" class="btn  indigo darken-1">siguiente</a>
+                    </div>
+                  </div>
+
+                </div>
+              </div><!-- /Card-->
+            </div>
+          </div>
+          <!-------------->
+        </div>
+
+        <div class="col m8 rompecabezas">
+          <div class="col m12">
+            <canvas id="canvas" name="Canvas" ></canvas>
+            <div class="valign-wrapper"><a class="waves-effect waves-light btn" id="iniciar">Iniciar</a></div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+<div class="modal" id="tipsM">
+  <div class="modal-content">
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/9YP9MmtIs04" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-action modal-close btn-flat">Cerrar</a>
+  </div>
+</div>
+
+
+    <script>window.$ = window.jQuery = require('jquery');</script>
+    <script>window.$.Velocity=window.jQuery.Velocity=require("materialize-css/js/velocity.min.js");</script>
+    <script>require('./materialize/js/materialize.min.js')</script>
+    <script>require('./js/init.js')</script>
+    <script>window.puzzle = require('./js/puzzle.js')</script>
+    <script>window.funciones =require('./js/funciones.js')</script>
+
+
+  </body>
+</html>
