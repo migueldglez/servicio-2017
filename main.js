@@ -3,7 +3,7 @@ const {app, BrowserWindow} = electron
 const $ = jQuery = require('jquery')
 const path = require('path')
 const url = require('url')
-
+const {ipcMain} = require('electron')
 
 
 // Keep a global reference of the window object, if you don't, the window will
@@ -27,8 +27,6 @@ function createWindow (width,height) {
     win.show()
   })
   //win.setMenu(null); Quita el menu por default
-
-
 
   // and load the index.html of the app.
   win.loadURL(url.format({
@@ -74,3 +72,21 @@ app.on('activate', () => {
     createWindow()
   }
 })
+
+
+//Enviar mensaje
+
+ipcMain.on('load-page', (event,arg) => {
+  win.loadURL(arg)
+})
+
+ipcMain.on('asynchronous-message', (event, arg) => {
+  console.log(arg + 'main')  // prints "ping"
+  event.sender.send('asynchronous-reply', 'pong')
+})
+
+ipcMain.on('synchronous-message', (event, arg) => {
+  console.log(arg + 'main')  // prints "ping"
+  event.returnValue = 'pong'
+})
+//--------------------
