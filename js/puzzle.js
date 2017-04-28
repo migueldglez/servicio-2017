@@ -4,6 +4,8 @@ const PUZZLE_HOVER_TINT = '#378A37';
 var _canvas
 var _stage
 
+var _flag
+
 var _img
 var _pieces
 var _Width
@@ -34,6 +36,7 @@ function onImage() {
   _puzzleHeight = _pieceHeightCanvas * PUZZLE_DIFFICULTY;
   _Width = _pieceWidthImg * PUZZLE_DIFFICULTY;
   _Height = _pieceHeightImg * PUZZLE_DIFFICULTY;
+  _flag = true
   setCanvas();
   initPuzzle();
 }
@@ -85,13 +88,16 @@ function buildPieces(){
             yPos += _pieceHeightImg;
         }
     }
-    //_canvas.onclick getElementById('play').
 
-    document.getElementById('iniciar').onclick = shufflePuzzle;
-
+    _canvas.addEventListener("mousedown",onceShuffle)
 }
 
-function shufflePuzzle(){
+function onceShuffle() {
+  _canvas.removeEventListener('mousedown',onceShuffle)
+  shufflePuzzle()
+}
+
+function shufflePuzzle(e){
     _pieces = shuffleArray(_pieces);
     _stage.clearRect(0,0,_puzzleWidth,_puzzleHeight);
     var i;
@@ -250,3 +256,4 @@ function gameOver(){
 
 exports.init = init();
 exports.canv = _canvas
+exports.flag = _flag

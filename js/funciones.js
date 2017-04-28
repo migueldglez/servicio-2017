@@ -121,7 +121,6 @@ function ecuacion(){
 //Coloca la ecuacion final en el formulario
 function pushEcuacion() {
   var n = ecuacion()
-  console.log(n[0] + ' = ' + n[1]);
   localStorage.setItem("m1",n[0]);
   localStorage.setItem("m2",n[1]);
   document.getElementById('miembro1').innerHTML = n[0]
