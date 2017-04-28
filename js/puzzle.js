@@ -22,7 +22,7 @@ var _mouse
 function init() {
   _img = new Image()
   _img.addEventListener('load',onImage,false)
-  _img.src = './img/img-2.jpg'
+  _img.src = '../img/img-2.jpg'
 }
 
 function onImage() {
