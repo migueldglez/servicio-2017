@@ -3,16 +3,8 @@ const path = require('path')
 const url = require('url')
 
 
-console.log(ipcRenderer.sendSync('synchronous-message', 'ping')) // prints "pong"
-
-ipcRenderer.on('asynchronous-reply', (event, arg) => {
-  console.log(arg + 'render') // prints "pong"
-})
-
-ipcRenderer.send('asynchronous-message', 'ping')
-
 var linkUrl = url.format({
-    pathname: path.join(__dirname, 'inde.html'),
+    pathname: path.join(__dirname, 'game.html'),
     protocol: 'file:',
     slashes: true
   })

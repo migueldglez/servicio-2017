@@ -30,7 +30,7 @@ function createWindow (width,height) {
 
   // and load the index.html of the app.
   win.loadURL(url.format({
-    pathname: path.join(__dirname, 'templates/game.html'),
+    pathname: path.join(__dirname, 'templates/index.html'),
     protocol: 'file:',
     slashes: true
   }))
@@ -80,13 +80,4 @@ ipcMain.on('load-page', (event,arg) => {
   win.loadURL(arg)
 })
 
-ipcMain.on('asynchronous-message', (event, arg) => {
-  console.log(arg + 'main')  // prints "ping"
-  event.sender.send('asynchronous-reply', 'pong')
-})
-
-ipcMain.on('synchronous-message', (event, arg) => {
-  console.log(arg + 'main')  // prints "ping"
-  event.returnValue = 'pong'
-})
 //--------------------

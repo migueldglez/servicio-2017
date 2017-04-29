@@ -4,7 +4,7 @@ const PUZZLE_HOVER_TINT = '#378A37';
 var _canvas
 var _stage
 
-var _flag
+var objeto
 
 var _img
 var _pieces
@@ -25,6 +25,8 @@ function init() {
   _img = new Image()
   _img.addEventListener('load',onImage,false)
   _img.src = '../img/img-2.jpg'
+  objeto = {}
+  objeto.x = 0
 }
 
 function onImage() {
@@ -36,7 +38,6 @@ function onImage() {
   _puzzleHeight = _pieceHeightCanvas * PUZZLE_DIFFICULTY;
   _Width = _pieceWidthImg * PUZZLE_DIFFICULTY;
   _Height = _pieceHeightImg * PUZZLE_DIFFICULTY;
-  _flag = true
   setCanvas();
   initPuzzle();
 }
@@ -250,10 +251,11 @@ function gameOver(){
     _canvas.onmousedown = null;
     _canvas.onmousemove = null;
     _canvas.onmouseup = null;
+    objeto.x = 2
     initPuzzle();
 }
 
 
 exports.init = init();
 exports.canv = _canvas
-exports.flag = _flag
+exports.objeto = objeto
