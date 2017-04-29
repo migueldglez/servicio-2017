@@ -11,7 +11,6 @@ function newEcuacion(termino) {
 
   _terminos.x = (a1[0]-a2[0])
   _terminos.c = (a2[1]-a1[1])
-  console.log('x = '+ _terminos.x + '/' +_terminos.c);
 }
 
 function splitEcua(array) {
@@ -21,6 +20,9 @@ function splitEcua(array) {
     if(array[i].includes("x")){
       switch (array[i]) {
         case 'x':
+          a[0]++
+          break;
+        case '+x':
           a[0]++
           break;
         case '-x':
@@ -38,7 +40,7 @@ function splitEcua(array) {
 }
 
 
-function pushEcuacion() {
+exports.pushEcuacion = () => {
   var n = ecuacion.ecuacion()
   _terminos.m1 = n[0]
   _terminos.m2 = n[1]
@@ -47,11 +49,6 @@ function pushEcuacion() {
   document.getElementById('miembro2').innerHTML = n[1]
 }
 
-window.onload = () => {
-  pushEcuacion();
-  document.getElementById('igual').innerHTML = "="
-}
 
-document.getElementById('siguiente').onclick = pushEcuacion;
 
 exports.terminos = _terminos;
