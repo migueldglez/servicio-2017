@@ -98,7 +98,7 @@ function allContNumber(arreglo) {
 //Regresa array con  una ecuacion aleatorio, asegurandose
 //que ningun miembro sea totalmente de un tipoNum
 //determinado de terminos
-function ecuacion(){
+exports.ecuacion =  () =>{
   var miembros = [miembro(),miembro()]
   var arr1 = miembros[0].split(' ')
   var arr2 = miembros[1].split(' ')
@@ -117,25 +117,3 @@ function ecuacion(){
   return miembros
 
 }
-
-//Coloca la ecuacion final en el formulario
-function pushEcuacion() {
-  var n = ecuacion()
-  localStorage.setItem("m1",n[0]);
-  localStorage.setItem("m2",n[1]);
-  document.getElementById('miembro1').innerHTML = n[0]
-  document.getElementById('miembro2').innerHTML = n[1]
-  return n
-}
-
-//Ejecuta la funcion pushEcuacion al terminar de cargar
-//la ventana.
-window.onload = function () {
-  pushEcuacion();
-  document.getElementById('igual').innerHTML = "="
-  //puzzle.init;
-}
-
-document.getElementById('siguiente').onclick = pushEcuacion;
-
-//exports.m = m;
