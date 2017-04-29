@@ -102,18 +102,48 @@ exports.ecuacion =  () =>{
   var miembros = [miembro(),miembro()]
   var arr1 = miembros[0].split(' ')
   var arr2 = miembros[1].split(' ')
-  var flag1 = allContX(arr1) && allContX(arr2)
-  var flag2 = allContNumber(arr2) && allContNumber(arr2)
+  var flag1 = allContX(arr1) && allContX(arr2) || ZeroX(arr1,arr2)
+  var flag2 = allContNumber(arr1) && allContNumber(arr2) || ZeroX(arr1,arr2)
 
   while (flag1 || flag2) {
     miembros[0] = miembro()
     miembros[1] = miembro()
     arr1 = miembros[0].split(' ')
     arr2 = miembros[1].split(' ')
-    flag1 = allContX(arr1) && allContX(arr2)
-    flag2 = allContNumber(arr2) && allContNumber(arr2)
+    flag1 = allContX(arr1) && allContX(arr2) || ZeroX(arr1,arr2)
+    flag2 = allContNumber(arr2) && allContNumber(arr2) || ZeroX(arr1,arr2)
   }
 
   return miembros
 
 }
+
+function ZeroX(array1,array2) {
+  var a1 = contX(array1)
+  var a2 = contX(array2)
+
+  return ((a1-a2)===0)
+
+}
+
+function contX(array) {
+  var a = 0
+
+  for (var i = 0; i < array.length; i++) {
+    if(array[i].includes("x")){
+      switch (array[i]) {
+        case 'x':
+          a++
+          break;
+        case '-x':
+          a--
+          break;
+        default:
+          a+=  parseInt(array[i].replace("x",""))
+      }
+    }
+  }
+
+  return a
+}
+//
