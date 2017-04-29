@@ -1,7 +1,8 @@
 /*
 *    Genera una ecuacion  con un maximo de 4 terminos
 *    aleatoriamente en cada miembro, entre terminos
-*    independientes y dependientes
+*    independientes y dependientes, cuya suma total de
+*    x no sea igual a cero.
 */
 
 
@@ -118,6 +119,7 @@ exports.ecuacion =  () =>{
 
 }
 
+//Regresa verdadero si la suma total de las x es igual a cero
 function ZeroX(array1,array2) {
   var a1 = contX(array1)
   var a2 = contX(array2)
@@ -126,6 +128,7 @@ function ZeroX(array1,array2) {
 
 }
 
+//Suma el valor de todas las x
 function contX(array) {
   var a = 0
 
