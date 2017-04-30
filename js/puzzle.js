@@ -1,10 +1,13 @@
+const res = require('../js/resolucion.js');
 const PUZZLE_DIFFICULTY = 3
 const PUZZLE_HOVER_TINT = '#378A37';
 
+var _enviar = document.getElementById('enviar')
+var _respuesta = document.getElementById('respuestas')
+var _ban = {intent:0} //piezas que se puedan mover
+
 var _canvas
 var _stage
-
-var objeto
 
 var _img
 var _pieces
@@ -24,9 +27,7 @@ var _mouse
 function init() {
   _img = new Image()
   _img.addEventListener('load',onImage,false)
-  _img.src = '../img/img-2.jpg'
-  objeto = {}
-  objeto.x = 0
+  _img.src = '../img/img-1.jpg'
 }
 
 function onImage() {
@@ -56,9 +57,11 @@ function initPuzzle(){
     _currentPiece = null;
     _currentDropPiece = null;
     _stage.drawImage(_img,0, 0, _Width, _Height, 0, 0, _puzzleWidth, _puzzleHeight );
-    createTitle("Click to Start Puzzle");
+    createTitle("Click para Iniciar");
     buildPieces();
     _canvas.style.backgroundColor = "white"
+    _enviar.classList.add('disabled')
+    _respuesta.disabled = true
 }
 
 function createTitle(msg){
@@ -94,6 +97,8 @@ function buildPieces(){
 }
 
 function onceShuffle() {
+  _enviar.classList.remove('disabled')
+  _respuesta.disabled = false
   _canvas.removeEventListener('mousedown',onceShuffle)
   shufflePuzzle()
 }
@@ -125,7 +130,9 @@ function shufflePuzzle(e){
             yPos2 += _pieceHeightCanvas;
         }
     }
+
     _canvas.onmousedown = onPuzzleClick;
+
 }
 
 function shuffleArray(o){
@@ -135,6 +142,7 @@ function shuffleArray(o){
 
 function onPuzzleClick(e){
 
+  if(_ban.intent>0){
     if(e.layerX || e.layerX == 0){
         _mouse.x = e.layerX;
         _mouse.y = e.layerY;
@@ -152,7 +160,11 @@ function onPuzzleClick(e){
         _stage.restore();
         _canvas.onmousemove = updatePuzzle;
         _canvas.onmouseup = pieceDropped;
+
     }
+  }
+
+
 }
 
 function checkPieceClicked(){
@@ -225,6 +237,7 @@ function pieceDropped(e){
         _currentPiece.yPos2 = _currentDropPiece.yPos2;
         _currentDropPiece.xPos2 = tmp.xPos2;
         _currentDropPiece.yPos2 = tmp.yPos2;
+        _ban.intent--
     }
     resetPuzzleAndCheckWin();
 }
@@ -251,11 +264,12 @@ function gameOver(){
     _canvas.onmousedown = null;
     _canvas.onmousemove = null;
     _canvas.onmouseup = null;
-    objeto.x = 2
+    res.terminos.goods = 0
     initPuzzle();
 }
 
+//document.getElementById('reinicio').onclick = gameOver
 
 exports.init = init();
 exports.canv = _canvas
-exports.objeto = objeto
+exports._ban = _ban
