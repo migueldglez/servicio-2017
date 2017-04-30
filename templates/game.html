@@ -20,7 +20,7 @@
         <div class="col m4">
 
           <div class="row">
-            <h1 class="Roboto center-align animated infinite tada">Ecua-Quix</h1>
+            <h1 class="Roboto center-align animated infinite tada">E-Quix</h1>
           </div>
 
           <div class="row">
@@ -39,11 +39,11 @@
                   <div class="row"><!-- Form-->
                     <form action="" class="">
                       <div class="input-field col m6"><!-- Campo de Respuestas-->
-                        <input id="first_name" type="text" class="validate">
-                        <label for="first_name">X = </label>
+                        <input id="respuestas" type="text" class="validate">
+                        <label for="respuestas">X = </label>
                       </div>
                       <div class="col m6 valign-wrapper">
-                        <a id="enviar" href="#" class="waves-light btn light-green darken-1" style="margin-top:15%;">Enviar</a>
+                        <a id="enviar" href="#" class="waves-light btn light-green darken-1 disabled" style="margin-top:15%;">Enviar</a>
                       </div>
                     </form>
                   </div>
@@ -54,6 +54,9 @@
                     <div class="col m6 next">
                       <a id="siguiente" href="#" class="btn  indigo darken-1 hide">siguiente</a>
                     </div>
+                    <!--div class="col m6 next">
+                      <a id="reinicio" href="#" class="btn  indigo darken-1 ">reiniciar</a>
+                    </div-->
                   </div>
 
                 </div>
@@ -78,9 +81,6 @@
         <video controls class="responsive-video">
           <source src="../videos/video_01.mp4" type="video/mp4">
         </video>
-        <!--div class="video-container">
-          <iframe src="https://www.youtube.com/embed/9YP9MmtIs04" frameborder="0" allowfullscreen></iframe>
-        </div-->
       </div>
       <div class="modal-footer">
         <a href="#!" class="modal-action modal-close btn-flat">Cerrar</a>
@@ -92,9 +92,9 @@
     <script>window.$.Velocity=window.jQuery.Velocity=require("materialize-css/js/velocity.min.js");</script>
     <script>require('../materialize/js/materialize.min.js')</script>
     <script>require('../js/init.js')</script>
-    <script>window.puzzle = require('../js/puzzle.js')</script>
-    <script>window.funciones =require('../js/funciones.js')</script>
-    <script>require('../js/btn.js')</script>
+    <!--script>window.puzzle = require('../js/puzzle.js')</script-->
+    <script>window.btn = require('../js/btn.js')</script>
+
 
 
   </body>
