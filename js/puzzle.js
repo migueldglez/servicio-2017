@@ -2,8 +2,10 @@ const res = require('../js/resolucion.js');
 const PUZZLE_DIFFICULTY = 3
 const PUZZLE_HOVER_TINT = '#378A37';
 
+var _efecto = document.getElementById('efecto')
 var _enviar = document.getElementById('enviar')
 var _respuesta = document.getElementById('respuestas')
+var _intentos = document.getElementById('intentos')
 var _ban = {intent:0} //piezas que se puedan mover
 
 var _canvas
@@ -33,7 +35,7 @@ function init() {
 function onImage() {
   _pieceWidthImg = Math.floor(_img.width / PUZZLE_DIFFICULTY)
   _pieceHeightImg = Math.floor(_img.height / PUZZLE_DIFFICULTY)
-  _pieceWidthCanvas = 853 / PUZZLE_DIFFICULTY
+  _pieceWidthCanvas = 850 / PUZZLE_DIFFICULTY
   _pieceHeightCanvas = 480 / PUZZLE_DIFFICULTY
   _puzzleWidth = _pieceWidthCanvas * PUZZLE_DIFFICULTY;
   _puzzleHeight = _pieceHeightCanvas * PUZZLE_DIFFICULTY;
@@ -162,6 +164,10 @@ function onPuzzleClick(e){
         _canvas.onmouseup = pieceDropped;
 
     }
+  }else{
+    _efecto.src = "../effects/Computer-Error.mp3"
+    _efecto.volume = .3
+    _efecto.play()
   }
 
 
@@ -237,7 +243,8 @@ function pieceDropped(e){
         _currentPiece.yPos2 = _currentDropPiece.yPos2;
         _currentDropPiece.xPos2 = tmp.xPos2;
         _currentDropPiece.yPos2 = tmp.yPos2;
-        _ban.intent--
+        _ban.intent--//actualiza los intentos para mover piezas
+        _intentos.innerHTML = _ban.intent
     }
     resetPuzzleAndCheckWin();
 }
@@ -265,6 +272,8 @@ function gameOver(){
     _canvas.onmousemove = null;
     _canvas.onmouseup = null;
     res.terminos.goods = 0
+    _ban.intent=0//actualiza los intentos para mover piezas
+    _intentos.innerHTML = _ban.intent
     initPuzzle();
 }
 
