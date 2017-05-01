@@ -7,6 +7,11 @@ html,body{
   width:100%;
 }
 
+section{
+  background-image: url("../img/pizarron.jpg");
+  background-size: 100% 97%;
+}
+
 section,.fila1{
   height: 100%;
   margin: 0px;
@@ -19,13 +24,14 @@ span{
 }
 
 .fila1 .m4{
-  background-color: #c5e1a5;
+  /*background-color: #c5e1a5;*/
   height: 100%;
-
+  padding-left: 30px;
+  padding-right: 0px;
 }
 
 .fila1 .m8{
-  background-color: #e6ee9c;
+  /*background-color: #e6ee9c;*/
   height: 100%;
 }
 
@@ -107,4 +113,43 @@ form div a.btn:hover{
 --------------------------------------------------------------------------------*/
 .rompecabezas .m12{
   margin-top: 8%;
+}
+
+/*------------------------------------------------------------------------------
+                   Score
+--------------------------------------------------------------------------------*/
+#score{
+  margin-left: 5px !important;
+  margin-right: 10px;
+}
+#scorelbl{
+  margin-left:  20px;
+  margin-right: 0px;
+}
+#resueltaslbl{
+  margin-left: 50px;
+  margin-right: 0px;
+}
+
+#resueltas{
+  margin-left: 5px;
+}
+
+#intentoslbl{
+  margin-left:  20px;
+  margin-right: 0px;
+}
+#intentos{
+  margin-left: 10px !important;
+  margin-right: 10px;
+}
+
+/*------------------*/
+
+#bien{
+  margin: 10px 10px;
+  margin-top: 23px;
+  margin-bottom: 0px;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
 }
