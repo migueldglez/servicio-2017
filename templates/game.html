@@ -44,6 +44,7 @@
                       </div>
                       <div class="col m6 valign-wrapper">
                         <a id="enviar" href="#" class="waves-light btn light-green darken-1 disabled" style="margin-top:15%;">Enviar</a>
+                        <i id="bien" class="small material-icons hide animated infinite bounceIn">done</i>
                       </div>
                     </form>
                   </div>
@@ -61,6 +62,29 @@
 
                 </div>
               </div><!-- /Card-->
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col m12">
+              <div class="card z-depth-5 blue accent-4">
+                <div class="card-content white-text">
+                  <div class="row">
+                    <div class="valign-wrapper">
+                      <span id="scorelbl" class="Roboto white-text">Score :</span><!-- Ecuacion-->
+                      <span id="score" class="Roboto white-text">0 Exp</span>
+                      <span id="resueltaslbl" class="Roboto white-text"> Resueltas :</span>
+                      <span class="Roboto white-text" id="resueltas">0</span>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="valign-wrapper">
+                      <span id="intentoslbl" class="Roboto white-text">Oport. de mover :</span><!-- Ecuacion-->
+                      <span id="intentos" class="Roboto white-text">0</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <!-------------->
@@ -86,6 +110,7 @@
         <a href="#!" class="modal-action modal-close btn-flat">Cerrar</a>
       </div>
     </div>
+    <audio id="efecto" class="hide"></audio>
 
 
     <script>window.$ = window.jQuery = require('jquery');</script>
