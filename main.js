@@ -30,7 +30,8 @@ function createWindow (width,height) {
 
   // and load the index.html of the app.
   win.loadURL(url.format({
-    pathname: path.join(__dirname, 'templates/game.html'),
+    //__dirname: direccion completa de la carpeta del projecto ejem: /home/aisark/Escritorio/servicio-2017
+    pathname: path.join(__dirname, 'templates/game.html'),//<----- ruta de los archivos html
     protocol: 'file:',
     slashes: true
   }))
