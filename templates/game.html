@@ -53,7 +53,7 @@
                       <a id="tips" href="#tipsM" class="btn red darken-1 tips hide">Tips</a>
                     </div>
                     <div class="col m6 next">
-                      <a id="siguiente" href="#" class="btn  indigo darken-1 hide">siguiente</a>
+                      <a id="siguiente" href="#solucionM" class="btn  indigo darken-1 hide">siguiente</a>
                     </div>
                     <!--div class="col m6 next">
                       <a id="reinicio" href="#" class="btn  indigo darken-1 ">reiniciar</a>
@@ -102,14 +102,28 @@
 
     <div class="modal" id="tipsM">
       <div class="modal-content">
-        <video controls class="responsive-video">
+        <video id="vTutorial" controls class="responsive-video">
           <source src="../videos/video_01.mp4" type="video/mp4">
         </video>
       </div>
       <div class="modal-footer">
-        <a href="#!" class="modal-action modal-close btn-flat">Cerrar</a>
+        <a id="closeTM" class="modal-action modal-close btn-flat">Cerrar</a>
       </div>
     </div>
+
+    <div class="modal" id="solucionM">
+      <div class="modal-content">
+        <p>De la funcion :<span id="solFun"></span></p>
+        <p>Sumar terminos semejantes.<span id="solTerSem"></span></p>
+        <p>Reune terminos semejantes entre los miembros 1 y 2 <span id="reunTerm"></span></p>
+        <p>Sumando y Restando terminos semejantes <span id="sumTS"></span></p>
+        <p>Despejando X:<span id="resX"></span></p>
+      </div>
+      <div class="modal-footer">
+        <a id="closeSM" class="modal-action modal-close btn-flat">Cerrar</a>
+      </div>
+    </div>
+
     <audio id="efecto" class="hide"></audio>
 
 
