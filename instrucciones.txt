@@ -8,3 +8,11 @@
 6.- Los archivos necesarios ponerlos en las carpetas correspondientes (css,js,etc)
 7.- Para lanzar la aplicacion, en la linea de comandos situado en la carpeta del projecto utilizar el comando 'npm start'
     o bien 'electron .'
+
+
+atom-typescript
+file-icons
+lan-javascript-jsx
+linter
+plataformio-ide-terminal
+atom material
