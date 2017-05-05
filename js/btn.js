@@ -10,6 +10,7 @@ var _score = document.getElementById('score')
 var _intentos = document.getElementById('intentos')
 var _icono = document.getElementById('bien')
 var _efecto = document.getElementById('efecto')
+var _closeSM = document.getElementById('closeSM')
 
 res.terminos.errs = 0
 res.terminos.goods = 0
@@ -21,29 +22,11 @@ res.terminos.score = 0
 function mostrar() {
   if(_valor.value==0 && !_valor.value==''){
     iconAnimation(1)
+    res.terminos.canM1=0
+    res.terminos.canM2=0
     res.pushEcuacion()
-    _valor.value = ''
-    res.terminos.errs = 0
-    _tips.classList.add('hide')
-    _siguiente.classList.add('hide')
-    res.terminos.goods++
-    res.terminos.global++
-    res.terminos.score+=100
-    _resueltas.innerHTML = res.terminos.global
-    _score.innerHTML = res.terminos.score + ' Exp'
-    switch (res.terminos.goods) {
-      case 1:
-        puzzle._ban.intent = 1
-        break;
-      case 2:
-        puzzle._ban.intent = 2
-        break;
-      case 3:
-        puzzle._ban.intent = 3
-        break;
-      default:
-        puzzle._ban.intent = 4
-    }
+    resetCss()
+    setIntentos()
     _intentos.innerHTML = puzzle._ban.intent
   }else{
     iconAnimation(0)
@@ -55,6 +38,36 @@ function mostrar() {
     }else if(res.terminos.errs===5){
       _siguiente.classList.remove('hide')
     }
+  }
+}
+
+//Resetea algunas propiedades de los botonoes
+function resetCss() {
+  _valor.value = ''
+  res.terminos.errs = 0
+  _tips.classList.add('hide')
+  _siguiente.classList.add('hide')
+  res.terminos.goods++
+  res.terminos.global++
+  res.terminos.score+=100
+  _resueltas.innerHTML = res.terminos.global
+  _score.innerHTML = res.terminos.score + ' Exp'
+}
+
+//Pone el numero de intentos que se tiene para mover piezas
+function setIntentos() {
+  switch (res.terminos.goods) {
+    case 1:
+      puzzle._ban.intent = 1
+      break;
+    case 2:
+      puzzle._ban.intent = 2
+      break;
+    case 3:
+      puzzle._ban.intent = 3
+      break;
+    default:
+      puzzle._ban.intent = 4
   }
 }
 
@@ -91,7 +104,7 @@ function iconAnimation(num) {
     _icono.classList.add(i)
   }
   _efecto.src = a_src
-  _efecto.volume = .3
+  _efecto.volume = .1
   _efecto.play()
 
   _icono.classList.remove('hide')
@@ -101,7 +114,7 @@ function iconAnimation(num) {
     for (i of clases) {
       _icono.classList.remove(i)
     }
-  }, 1000);
+  }, 2000);
 
 
 }
@@ -109,14 +122,20 @@ function iconAnimation(num) {
 //Al cargas la pagina game.html lanza la funcion pushEcuacion()
 //y pone el simbolo igual entre los terminos
 window.onload = () => {
+  res.terminos.canM1=0
+  res.terminos.canM2=0
   res.pushEcuacion();
   document.getElementById('igual').innerHTML = "="
 }
 
+
 //Eventos en los distintos botones
-_siguiente.onclick = ocultar
+//_siguiente.onclick = ocultar
 _enviar.onclick = mostrar
-_valor.onkeypress = enter;
+_valor.onkeypress = enter
 
 //Variables y funciones exportadas
 exports.t = res.terminos
+exports.ocultar =  function () {
+  ocultar()
+}
