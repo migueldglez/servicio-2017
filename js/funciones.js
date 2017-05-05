@@ -4,7 +4,7 @@
 *    independientes y dependientes, cuya suma total de
 *    x no sea igual a cero.
 */
-
+const res = require('../js/resolucion.js');
 
 var operFirst = ['','-']
 var operLast = ['+','-']
@@ -35,14 +35,7 @@ function termino(tipo) {
 
   if(tipo==0){
     var c = coefiNum();
-
-    if (c==1) {
-      term = 'x'
-    }
-    else {
-      term = c + 'x'
-    }
-
+    term = (c==1) ? 'x':(c + 'x')
   }
   else{
     term = coefiNum()
@@ -54,9 +47,10 @@ function termino(tipo) {
 //Regresa un miembro con terminos aleatorios,
 //con un maximo de 4 y un minimo de 1, con terminos
 // dependientes e independientes
-function miembro() {
+function miembro(cant) {
+  var c = cant
   var miembro
-  for (var i = 0; i < cantTerminos(); i++) {
+  for (var i = 0; i < c; i++) {
     if(i===0){
       miembro = operFirst[tipoNum()]+termino(tipoNum());
     }else{
@@ -98,23 +92,29 @@ function allContNumber(arreglo) {
 
 //Regresa array con  una ecuacion aleatorio, asegurandose
 //que ningun miembro sea totalmente de un tipoNum
-//determinado de terminos
-exports.ecuacion =  () =>{
-  var miembros = [miembro(),miembro()]
+//determinado de terminos, si el evento del boton siguiente es lanzado
+//regresa una ecuacion con la misma cantidad de terminos que la anterior
+
+exports.ecuacion =  (cant1,cant2) =>{
+  var miembros = [miembro(cant1),miembro(cant2)]
   var arr1 = miembros[0].split(' ')
   var arr2 = miembros[1].split(' ')
   var flag1 = allContX(arr1) && allContX(arr2) || ZeroX(arr1,arr2)
   var flag2 = allContNumber(arr1) && allContNumber(arr2) || ZeroX(arr1,arr2)
 
   while (flag1 || flag2) {
-    miembros[0] = miembro()
-    miembros[1] = miembro()
+    var v1 = (res.terminos.canM1===0)?cantTerminos():res.terminos.canM1
+    var v2 = (res.terminos.canM2===0)?cantTerminos():res.terminos.canM2
+    miembros[0] = miembro(v1)
+    miembros[1] = miembro(v2)
     arr1 = miembros[0].split(' ')
     arr2 = miembros[1].split(' ')
     flag1 = allContX(arr1) && allContX(arr2) || ZeroX(arr1,arr2)
     flag2 = allContNumber(arr2) && allContNumber(arr2) || ZeroX(arr1,arr2)
   }
 
+  res.terminos.canM1 = arr1.length
+  res.terminos.canM2 = arr2.length
   return miembros
 
 }
@@ -149,4 +149,5 @@ function contX(array) {
 
   return a
 }
-//
+
+exports.cantTerminos = ()=>{return cantTerminos()}
