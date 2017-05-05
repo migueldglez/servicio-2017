@@ -29,7 +29,7 @@ var _mouse
 function init() {
   _img = new Image()
   _img.addEventListener('load',onImage,false)
-  _img.src = '../img/img-1.jpg'
+  _img.src = '../img/img-2.jpg'
 }
 
 function onImage() {
@@ -165,6 +165,7 @@ function onPuzzleClick(e){
 
     }
   }else{
+    //efecto de sonido de error de movimiento
     _efecto.src = "../effects/Computer-Error.mp3"
     _efecto.volume = .3
     _efecto.play()
