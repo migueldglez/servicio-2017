@@ -4,6 +4,8 @@ const $ = jQuery = require('jquery')
 const path = require('path')
 const url = require('url')
 const {ipcMain} = require('electron')
+const os = require('os');
+
 
 
 // Keep a global reference of the window object, if you don't, the window will
@@ -12,13 +14,17 @@ let win
 
 function createWindow (width,height) {
 
+  //Si el OS es Windows, Crea una ventana sin marco
+  var flag = (os.platform()==='win32')?false:true
+
   win = new BrowserWindow({
     width:width,
     height: height,
     autoHideMenuBar:true,
     backgroundColor:'#8DBDAB',
     icon: path.join(__dirname, 'icon/64x64.png'),
-    show:false
+    show:false,
+    frame: flag
   })
   //maximiza la ventana
   win.setResizable(false);
@@ -31,7 +37,7 @@ function createWindow (width,height) {
   // and load the index.html of the app.
   win.loadURL(url.format({
     //__dirname: direccion completa de la carpeta del projecto ejem: /home/aisark/Escritorio/servicio-2017
-    pathname: path.join(__dirname, 'templates/game.html'),//<----- ruta de los archivos html
+    pathname: path.join(__dirname, 'templates/main.html'),//<----- ruta de los archivos html
     protocol: 'file:',
     slashes: true
   }))
