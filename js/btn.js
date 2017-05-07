@@ -1,5 +1,5 @@
 const res = require('../js/resolucion.js');
-const puzzle = require('../js/puzzle.js')
+const puzzle = require('../js/rompecabezas.js')
 
 var _siguiente =  document.getElementById('siguiente')
 var _tips = document.getElementById('tips')
@@ -92,7 +92,7 @@ function enter(e) {
 
 //Animacion y efecto de sonidos de los iconos al cometer errores o al acertar
 function iconAnimation(num) {
-  var icono = (num==1) ? 'done' : 'not_interested'
+  var icono = (num==1) ? 'done' : 'close'
   var bien = ['green-text', 'text-darken-4']
   var mal = ['red-text', 'text-darken-4']
   var clases = (num==1) ? bien : mal
