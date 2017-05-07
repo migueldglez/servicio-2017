@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Quix</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,400italic,700italic,700" rel="stylesheet" type="text/css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="../materialize/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="../css/estilos.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="../css/fonts.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link rel="stylesheet" href="../css/animate.css">
+  </head>
+  <body>
+    <div class="row" id="f1"></div>
+
+    <div class="row" id="f2">
+      <div class="col m6" id="answer">
+        <div class="card-panel z-depth-5 green">
+          <div class="row">
+            <div id="instr"class="valign-wrapper">
+              <h5 class="Roboto  blue-text text-lighten-5"> Hallar el valor de X en la siguiente ecuación:</h5>
+            </div>
+            <div class="valign-wrapper" id="formula">
+              <h5  id="miembro1"></h5>
+              <h5 id="igual"></h5>
+              <h5 id="miembro2"></h5>
+            </div>
+          </div>
+
+          <div class="row" id="formulario">
+            <form class="col m12 s12" >
+              <div class="row">
+                <div class="col m4 s4 input-field">
+                  <input id="respuestas" type="text" class="validate">
+                  <label for="respuestas">X = </label>
+                </div>
+                <div class="col m4 s4 boton">
+                  <a id="enviar" class="waves-light btn light-green darken-1 disabled s12" style="margin-top:15%;">Enviar</a>
+                </div>
+                <div class="col m4 s4">
+                  <i id="bien" class="medium material-icons animated bounceIn s12 hide">close</i>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="row" id="btnEvents">
+            <div class="col s12 m6">
+              <a id="tips" href="#tipsM" class="btn red darken-1 tips hide">Tips</a>
+            </div>
+            <div class="col s12 m6 next">
+              <a id="siguiente" href="#solucionM" class="btn  indigo darken-1 hide">siguiente</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col m6" id="Canvas">
+        <div class="row" id="puntaje">
+          <div class="col m6 s6">
+            <div class="card-panels white-text">
+              <div class="valign-wrapper">
+                <h5 id="nombre">Antonio Toga Martin</h5>
+                <h5 id="semestre">6 sem.</h5>
+              </div>
+              <div class="valign-wrapper">
+                <h5 id="lblRes">Total Resueltas:</h5>
+                <h5 id="resueltas">06</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col m6 s6">
+            <div class="card-panels white-text">
+              <div class="valign-wrapper">
+                <h4>Score :</h4>
+                <h4 id="score">100 Exp</h4>
+              </div>
+              <div class="valign-wrapper">
+                <h4 >Movimientos:</h4>
+                <h4 id="intentos" >03</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row" id="lienzo">
+          <div class="col m12">
+            <canvas id="canvas"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <audio id="efecto" class="hide"></audio>
+
+    <!-- Modals -->
+    <div class="modal" id="solucionM">
+      <div class="modal-content">
+        <p>De la funcion : <br><span id="solFun"></span></p>
+        <p>Sumar terminos semejantes. <br><span id="solTerSem"></span></p>
+        <p>Reune terminos semejantes entre los miembros 1 y 2 <br> <span id="reunTerm"></span></p>
+        <p>Sumando y Restando terminos semejantes <br> <span id="sumTS"></span></p>
+        <p>Despejando X: <br><span id="resX"></span></p>
+      </div>
+      <div class="modal-footer">
+        <a id="closeSM" class="modal-action modal-close btn-flat">Cerrar</a>
+      </div>
+    </div>
+    <div class="modal" id="tipsM">
+      <div class="modal-content">
+        <video id="vTutorial" controls class="responsive-video">
+          <source src="../videos/video_01.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="modal-footer">
+        <a id="closeTM" class="modal-action modal-close btn-flat">Cerrar</a>
+      </div>
+    </div>
+
+    <script>window.$ = window.jQuery = require('jquery');</script>
+    <script>window.$.Velocity=window.jQuery.Velocity=require("materialize-css/js/velocity.min.js");</script>
+    <script>require('../materialize/js/materialize.min.js')</script>
+    <script>require('../js/init.js')</script>
+    <script>window.btn = require('../js/btn.js')</script>
+  </body>
+</html>
