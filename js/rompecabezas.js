@@ -1,12 +1,12 @@
-//const res = require('../js/resolucion.js');
+const res = require('../js/resolucion.js');
 const PUZZLE_DIFFICULTY = 3
 const PUZZLE_HOVER_TINT = '#378A37';
 
-/*var _efecto = document.getElementById('efecto') //guarda la etiqueta de audio de efectos de sonio
+var _efecto = document.getElementById('efecto') //guarda la etiqueta de audio de efectos de sonio
 var _enviar = document.getElementById('enviar') //guarda el boton enviar
 var _respuesta = document.getElementById('respuestas')
 var _intentos = document.getElementById('intentos')
-var _ban = {intent:0} //piezas que se puedan mover*/
+var _ban = {intent:0} //piezas que se puedan mover
 var _lienzo = document.getElementById('lienzo') //guarda la fila donde se dibuja el canvas
 
 
@@ -39,8 +39,8 @@ function init() {
 function onImage() {
   _pieceWidthImg = Math.floor(_img.width / PUZZLE_DIFFICULTY)
   _pieceHeightImg = Math.floor(_img.height / PUZZLE_DIFFICULTY)
-  _pieceWidthCanvas = (_lienzo.scrollWidth-20) / PUZZLE_DIFFICULTY
-  _pieceHeightCanvas = 480 / PUZZLE_DIFFICULTY
+  _pieceWidthCanvas = (_lienzo.scrollWidth-50) / PUZZLE_DIFFICULTY
+  _pieceHeightCanvas = (_lienzo.scrollHeight-40) / PUZZLE_DIFFICULTY
   _puzzleWidth = _pieceWidthCanvas * PUZZLE_DIFFICULTY;
   _puzzleHeight = _pieceHeightCanvas * PUZZLE_DIFFICULTY;
   _Width = _pieceWidthImg * PUZZLE_DIFFICULTY;
@@ -50,7 +50,7 @@ function onImage() {
 }
 
 function setCanvas(){
-    _canvas = document.getElementById('Canvas')
+    _canvas = document.getElementById('canvas')
     _stage = _canvas.getContext('2d');
     _canvas.width =  _puzzleWidth
     _canvas.height = _puzzleHeight
@@ -64,7 +64,7 @@ function initPuzzle(){
     _currentDropPiece = null;
     _stage.drawImage(_img,0, 0, _Width, _Height, 0, 0, _puzzleWidth, _puzzleHeight );
     createTitle("Click para Iniciar");
-    //buildPieces();
+    buildPieces();
     _canvas.style.backgroundColor = "white"
     _enviar.classList.add('disabled')
     _respuesta.disabled = true
@@ -81,7 +81,7 @@ function createTitle(msg){
     _stage.font = "20px Arial";
     _stage.fillText(msg,_puzzleWidth / 2,  _puzzleHeight - 20);
 }
-/*
+
 function buildPieces(){
     var i;
     var piece;
@@ -287,4 +287,3 @@ function gameOver(){
 exports.init = init();
 exports.canv = _canvas
 exports._ban = _ban
-*/
