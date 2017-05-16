@@ -7,18 +7,21 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,400italic,700italic,700" rel="stylesheet" type="text/css">
 
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="../materialize/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link href="../css/estilos.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link href="../css/fonts.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link rel="stylesheet" href="../css/animate.css">
   </head>
   <body>
+    <!-- ++++ Indefinido ++++ -->
     <div class="row" id="f1"></div>
-
+    <!-- ++++++++++++++++++++ -->
+    <!-- ++++ Fila Canvas y Ecuacion ++++ -->
     <div class="row" id="f2">
+      <!-- ++++ Fila de la Ecuacion a resolver y respuesta ++++ -->
       <div class="col m6" id="answer">
         <div class="card-panel z-depth-5 green">
+          <!-- ++++ Fila de la ecuacion a resolver ++++ -->
           <div class="row">
             <div id="instr"class="valign-wrapper">
               <h5 class="Roboto  blue-text text-lighten-5"> Hallar el valor de X en la siguiente ecuación:</h5>
@@ -29,7 +32,8 @@
               <h5 id="miembro2"></h5>
             </div>
           </div>
-
+          <!-- ++++++++++++++++++++++++++++++++++++++++ -->
+          <!-- ++++ Fila form de respuesta ++++ -->
           <div class="row" id="formulario">
             <form class="col m12 s12" >
               <div class="row">
@@ -46,18 +50,21 @@
               </div>
             </form>
           </div>
-
+          <!-- ++++++++++++++++++++++++++++++++ -->
+          <!-- ++++ Fila de Botones Tips y Ver Resultado ++++ -->
           <div class="row" id="btnEvents">
             <div class="col s12 m6">
               <a id="tips" href="#tipsM" class="btn red darken-1 tips hide">Tips</a>
             </div>
             <div class="col s12 m6 next">
-              <a id="siguiente" href="#solucionM" class="btn  indigo darken-1 hide">siguiente</a>
+              <a id="siguiente" href="#solucionM" class="btn  indigo darken-1 hide">Ver solución</a>
             </div>
           </div>
+          <!-- ++++++++++++++++++++++++++++++++++++++++++++++ -->
         </div>
       </div>
-
+      <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+      <!-- ++++ Fila del canvas ++++ -->
       <div class="col m6" id="Canvas">
         <div class="row" id="puntaje">
           <div class="col m6 s6">
@@ -92,11 +99,15 @@
           </div>
         </div>
       </div>
+      <!-- +++++++++++++++++++++++++ -->
     </div>
+    <!-- ++++++++++++++++++++++++++++++++ -->
 
+    <!-- ++++ Reproductor de audio ++++-->
     <audio id="efecto" class="hide"></audio>
+    <!-- +++++++++++++++++++++++++++++ -->
 
-    <!-- Modals -->
+    <!-- ++++ Modal de Solucion paso a paso ++++ -->
     <div class="modal" id="solucionM">
       <div class="modal-content">
         <p>De la funcion : <br><span id="solFun"></span></p>
@@ -109,6 +120,8 @@
         <a id="closeSM" class="modal-action modal-close btn-flat">Cerrar</a>
       </div>
     </div>
+    <!-- +++++++++++++++++++++++++++++++++++++++ -->
+    <!-- ++++ Modal de Video Tip ++++ -->
     <div class="modal" id="tipsM">
       <div class="modal-content">
         <video id="vTutorial" controls class="responsive-video">
@@ -119,11 +132,15 @@
         <a id="closeTM" class="modal-action modal-close btn-flat">Cerrar</a>
       </div>
     </div>
+    <!-- ++++++++++++++++++++++++++++ -->
 
+    <!-- ++++ Scripts ++++ -->
     <script>window.$ = window.jQuery = require('jquery');</script>
     <script>window.$.Velocity=window.jQuery.Velocity=require("materialize-css/js/velocity.min.js");</script>
     <script>require('../materialize/js/materialize.min.js')</script>
     <script>require('../js/init.js')</script>
     <script>window.btn = require('../js/btn.js')</script>
+    <!-- +++++++++++++++++ -->
+
   </body>
 </html>
