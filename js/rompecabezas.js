@@ -39,8 +39,8 @@ function init() {
 function onImage() {
   _pieceWidthImg = Math.floor(_img.width / PUZZLE_DIFFICULTY)
   _pieceHeightImg = Math.floor(_img.height / PUZZLE_DIFFICULTY)
-  _pieceWidthCanvas = (_lienzo.scrollWidth-50) / PUZZLE_DIFFICULTY
-  _pieceHeightCanvas = (_lienzo.scrollHeight-40) / PUZZLE_DIFFICULTY
+  _pieceWidthCanvas = (_lienzo.scrollWidth-80) / PUZZLE_DIFFICULTY
+  _pieceHeightCanvas = (_lienzo.scrollHeight-60) / PUZZLE_DIFFICULTY
   _puzzleWidth = _pieceWidthCanvas * PUZZLE_DIFFICULTY;
   _puzzleHeight = _pieceHeightCanvas * PUZZLE_DIFFICULTY;
   _Width = _pieceWidthImg * PUZZLE_DIFFICULTY;
