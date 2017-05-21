@@ -3,7 +3,7 @@
 html,body{
   width: 100%;
   height: 100%;
-  background-image: url("../img/pizarron.jpg");
+  background-image: url("../img/pizarra.png");
   background-size: 100% 100%;
 }
 .row{
@@ -22,33 +22,47 @@ html,body{
   width: 100%;
 }
 
+/**** Botones Cerrar y Actualizar ****/
+.btnMain{
+  margin-top: 3%;
+}
+.btnMain a{
+  margin-right: 4%;
+}
+
 /**** Respuestas ****/
 #answer{
-  width: 30%;
+  width: 35%;
   height: 100%;
 }
 #answer .card-panel{
   margin: 0px;
   padding: 0px;
   height: 60%;
-  width: 90%;
+  width: 80%;
   margin-top: 10%;
-  margin-left: 5%;
+  margin-left: 15%;
 }
 #instr h5{
+  font-family: "TheConsion";
   margin-bottom: 0px;
   letter-spacing: -.03em;
   font-weight: 200;
   margin-left: 5%;
   margin-top: 10%;
+  font-size: 220%;
 }
 #formula{
   width: 80%;
   margin-left: 10%;
 }
+hr{
+  width: 80%;
+}
 #formula h5{
-  font-size: 1.3em;
-  font-weight: 400;
+  font-size: 2.5em;
+  font-weight: 900;
+  font-family: "Mathematical";
 }
 #igual{
   margin: 0em .4em;
@@ -61,7 +75,7 @@ html,body{
 #formulario .m4{
   width: 25%;
 }
-#formulario a, #btnEvents a{
+#btnEvents a{
   padding: 0 1em;
 }
 #formulario .boton,.input-field{
@@ -104,7 +118,7 @@ html,body{
 
 /**** Canvas y Score****/
 #Canvas{
-  width: 70%;
+  width: 65%;
   height: 100%;
 }
 #lienzo{
