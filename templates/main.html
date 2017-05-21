@@ -10,26 +10,37 @@
     <link href="../materialize/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link href="../css/estilos.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link href="../css/fonts.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet"/>
     <link rel="stylesheet" href="../css/animate.css">
   </head>
   <body>
     <!-- ++++ Indefinido ++++ -->
-    <div class="row" id="f1"></div>
+    <div class="row" id="f1">
+      <div class="valign-wrapper btnMain col s2 offset-s10">
+        <a class="btn-floating btn-large waves-effect waves-light  red">
+          <i class="fa fa-times" id="closeBrows"></i>
+        </a>
+        <a class="btn-floating btn-large waves-effect waves-light  blue left-align">
+          <i class="fa fa-refresh" id="reload"></i>
+        </a>
+      </div>
+    </div>
     <!-- ++++++++++++++++++++ -->
     <!-- ++++ Fila Canvas y Ecuacion ++++ -->
     <div class="row" id="f2">
       <!-- ++++ Fila de la Ecuacion a resolver y respuesta ++++ -->
       <div class="col m6" id="answer">
-        <div class="card-panel z-depth-5 green">
+        <div class="card-panel z-depth-5 blue accent-4">
           <!-- ++++ Fila de la ecuacion a resolver ++++ -->
           <div class="row">
             <div id="instr"class="valign-wrapper">
               <h5 class="Roboto  blue-text text-lighten-5"> Hallar el valor de X en la siguiente ecuación:</h5>
             </div>
+            <hr>
             <div class="valign-wrapper" id="formula">
               <h5  id="miembro1"></h5>
               <h5 id="igual"></h5>
-              <h5 id="miembro2"></h5>
+              <h5 id="miembro2" class="right"></h5>
             </div>
           </div>
           <!-- ++++++++++++++++++++++++++++++++++++++++ -->
@@ -42,7 +53,9 @@
                   <label for="respuestas">X = </label>
                 </div>
                 <div class="col m4 s4 boton">
-                  <a id="enviar" class="waves-light btn light-green darken-1 disabled s12" style="margin-top:15%;">Enviar</a>
+                  <a id="enviar" class="btn-floating btn-large waves-effect waves-light btn light-green darken-1 disabled s12" >
+                    <i class="medium material-icons">send</i>
+                  </a>
                 </div>
                 <div class="col m4 s4">
                   <i id="bien" class="medium material-icons animated bounceIn s12 hide">close</i>
@@ -95,7 +108,7 @@
 
         <div class="row" id="lienzo">
           <div class="col m12">
-            <canvas id="canvas"></canvas>
+            <canvas id="canvas" class="hoverable"></canvas>
           </div>
         </div>
       </div>
@@ -121,6 +134,7 @@
       </div>
     </div>
     <!-- +++++++++++++++++++++++++++++++++++++++ -->
+    
     <!-- ++++ Modal de Video Tip ++++ -->
     <div class="modal" id="tipsM">
       <div class="modal-content">
@@ -140,6 +154,7 @@
     <script>require('../materialize/js/materialize.min.js')</script>
     <script>require('../js/init.js')</script>
     <script>window.btn = require('../js/btn.js')</script>
+    <script type="text/javascript">require('../js/renderProcess/render.js');</script>
     <!-- +++++++++++++++++ -->
 
   </body>
