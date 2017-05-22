@@ -56,8 +56,8 @@ exports.pushEcuacion = () => {
   _terminos.m1 = n[0]
   _terminos.m2 = n[1]
   respuesta(_terminos)
-  document.getElementById('miembro1').innerHTML = n[0]
-  document.getElementById('miembro2').innerHTML = n[1]
+  var cadena = n[0]+' '+' = '+' '+n[1]
+  document.getElementById('ecuaMath').innerHTML = cadena
 }
 
 

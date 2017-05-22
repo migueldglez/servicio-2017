@@ -33,7 +33,7 @@ window.onload = init
 function init() {
   _img = new Image()
   _img.addEventListener('load',onImage,false)
-  _img.src = '../img/img-2.jpg'
+  _img.src = '../img/img-3.jpg'
 }
 
 function onImage() {
@@ -66,7 +66,6 @@ function initPuzzle(){
     createTitle("Click para Iniciar");
     buildPieces();
     _canvas.style.backgroundColor = "white"
-    _enviar.classList.add('disabled')
     _respuesta.disabled = true
 }
 
@@ -103,7 +102,6 @@ function buildPieces(){
 }
 
 function onceShuffle() {
-  _enviar.classList.remove('disabled')
   _respuesta.disabled = false
   _canvas.removeEventListener('mousedown',onceShuffle)
   shufflePuzzle()
