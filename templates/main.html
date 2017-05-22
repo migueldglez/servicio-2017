@@ -11,12 +11,16 @@
     <link href="../css/estilos.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link href="../css/fonts.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet"/>
+    <link href="../css/modals_style.css" type="text/css" rel="stylesheet"/>
     <link rel="stylesheet" href="../css/animate.css">
   </head>
   <body>
     <!-- ++++ Indefinido ++++ -->
     <div class="row" id="f1">
       <div class="valign-wrapper btnMain col s2 offset-s10">
+        <a class="btn-floating btn-large waves-effect waves-light  blue left-align">
+          <i class="fa fa-minus" id="minimizar"></i>
+        </a>
         <a class="btn-floating btn-large waves-effect waves-light  red">
           <i class="fa fa-times" id="closeBrows"></i>
         </a>
@@ -30,17 +34,14 @@
     <div class="row" id="f2">
       <!-- ++++ Fila de la Ecuacion a resolver y respuesta ++++ -->
       <div class="col m6" id="answer">
-        <div class="card-panel z-depth-5 blue accent-4">
+        <div class="card-panel z-depth-5">
           <!-- ++++ Fila de la ecuacion a resolver ++++ -->
           <div class="row">
             <div id="instr"class="valign-wrapper">
               <h5 class="Roboto  blue-text text-lighten-5"> Hallar el valor de X en la siguiente ecuación:</h5>
             </div>
-            <hr>
-            <div class="valign-wrapper" id="formula">
-              <h5  id="miembro1"></h5>
-              <h5 id="igual"></h5>
-              <h5 id="miembro2" class="right"></h5>
+            <div id="formula">
+              <h5  id="ecuaMath" class="center-align"></h5>
             </div>
           </div>
           <!-- ++++++++++++++++++++++++++++++++++++++++ -->
@@ -52,12 +53,7 @@
                   <input id="respuestas" type="text" class="validate">
                   <label for="respuestas">X = </label>
                 </div>
-                <div class="col m4 s4 boton">
-                  <a id="enviar" class="btn-floating btn-large waves-effect waves-light btn light-green darken-1 disabled s12" >
-                    <i class="medium material-icons">send</i>
-                  </a>
-                </div>
-                <div class="col m4 s4">
+                <div class="col m4 s4 good-bad">
                   <i id="bien" class="medium material-icons animated bounceIn s12 hide">close</i>
                 </div>
               </div>
@@ -88,7 +84,7 @@
               </div>
               <div class="valign-wrapper">
                 <h5 id="lblRes">Total Resueltas:</h5>
-                <h5 id="resueltas">06</h5>
+                <h5 id="resueltas">00</h5>
               </div>
             </div>
           </div>
@@ -96,11 +92,11 @@
             <div class="card-panels white-text">
               <div class="valign-wrapper">
                 <h4>Score :</h4>
-                <h4 id="score">100 Exp</h4>
+                <h4 id="score">00 Exp</h4>
               </div>
               <div class="valign-wrapper">
                 <h4 >Movimientos:</h4>
-                <h4 id="intentos" >03</h4>
+                <h4 id="intentos" >00</h4>
               </div>
             </div>
           </div>
@@ -121,22 +117,45 @@
     <!-- +++++++++++++++++++++++++++++ -->
 
     <!-- ++++ Modal de Solucion paso a paso ++++ -->
-    <div class="modal" id="solucionM">
+    <div class="modal modal-fixed-footer" id="solucionM">
+      <div id="modalTitle">
+        <h3 class="center-align white-text modtitle">Solución</h3>
+      </div>
       <div class="modal-content">
-        <p>De la funcion : <br><span id="solFun"></span></p>
-        <p>Sumar terminos semejantes. <br><span id="solTerSem"></span></p>
-        <p>Reune terminos semejantes entre los miembros 1 y 2 <br> <span id="reunTerm"></span></p>
-        <p>Sumando y Restando terminos semejantes <br> <span id="sumTS"></span></p>
-        <p>Despejando X: <br><span id="resX"></span></p>
+        <ul class="collapsible popout" data-collapsible="accordion">
+          <li>
+            <div class="collapsible-header">De la funcion : </div>
+            <div class="collapsible-body"><span id="solFun"></span></div>
+          </li>
+          <li>
+            <div class="collapsible-header">Sumar terminos semejantes.</div>
+            <div class="collapsible-body"><span id="solTerSem"></span></div>
+          </li>
+          <li>
+            <div class="collapsible-header">Reune terminos semejantes entre los miembros 1 y 2 </div>
+            <div class="collapsible-body"><span id="reunTerm"></span></div>
+          </li>
+          <li>
+            <div class="collapsible-header">Sumando y Restando terminos semejantes</div>
+            <div class="collapsible-body"><span id="sumTS"></span></div>
+          </li>
+          <li>
+            <div class="collapsible-header">Despejando X:</div>
+            <div class="collapsible-body"><span id="resX"></span></div>
+          </li>
+        </ul>
       </div>
       <div class="modal-footer">
         <a id="closeSM" class="modal-action modal-close btn-flat">Cerrar</a>
       </div>
     </div>
     <!-- +++++++++++++++++++++++++++++++++++++++ -->
-    
+
     <!-- ++++ Modal de Video Tip ++++ -->
     <div class="modal" id="tipsM">
+      <div id="modalTitle">
+        <h3 class="center-align white-text modtitle">Video Tips</h3>
+      </div>
       <div class="modal-content">
         <video id="vTutorial" controls class="responsive-video">
           <source src="../videos/video_01.mp4" type="video/mp4">
