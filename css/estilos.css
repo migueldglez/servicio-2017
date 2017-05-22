@@ -3,7 +3,7 @@
 html,body{
   width: 100%;
   height: 100%;
-  background-image: url("../img/pizarra.png");
+  background-image: url("../img/pizarron.jpg");
   background-size: 100% 100%;
 }
 .row{
@@ -28,20 +28,26 @@ html,body{
 }
 .btnMain a{
   margin-right: 4%;
+  background-color:  rgba(0, 0, 0, 0) !important;
 }
 
 /**** Respuestas ****/
 #answer{
   width: 35%;
-  height: 100%;
+  height: 60%;
 }
 #answer .card-panel{
   margin: 0px;
   padding: 0px;
-  height: 60%;
+  height: 100%;
   width: 80%;
   margin-top: 10%;
   margin-left: 15%;
+  background-image: url('../img/pencil_student.jpg');
+  background-size: 100% 100%;
+}
+#instr{
+  background-image: url('../img/material_green.png');
 }
 #instr h5{
   font-family: "TheConsion";
@@ -53,11 +59,8 @@ html,body{
   font-size: 220%;
 }
 #formula{
-  width: 80%;
-  margin-left: 10%;
-}
-hr{
-  width: 80%;
+  width: 90%;
+  margin-left: 5%;
 }
 #formula h5{
   font-size: 2.5em;
@@ -72,29 +75,40 @@ hr{
   margin-left: 10%;
   margin-top: 5%;
 }
-#formulario .m4{
-  width: 25%;
+#formulario .input-field{
+  width: 40%;
+  margin-right: 2%;
+}
+#formulario .boton, .good-bad{
+  width: 15%;
+}
+#formulario .good-bad{
+  margin-left: 8%;
 }
 #btnEvents a{
   padding: 0 1em;
-}
-#formulario .boton,.input-field{
-  margin-right: 12%;
 }
 #formulario .m4{
   margin-top: 0px;
 }
 .input-field label{
-  color: #b9f6ca;
+  color: #4a148c;
+  font-size: 1.5em;
 }
 .input-field input[type=text]{
-  border-bottom-color: #b9f6ca;
+  border-bottom-color: #4a148c;
+  box-shadow: 0 1px 0 0 #4a148c;
+}
+.input-field input[type=text]:disabled + label {
+  color: #4a148c;
 }
 .input-field input[type=text]:focus + label {
-  color: #ccff90;
+  color: #b71c1c;
 }
 .input-field input[type=text]:focus{
-  border-bottom-color: #ccff90;
+  border-bottom-color: #b71c1c;
+  border-bottom: 2px solid  #b71c1c !important;
+  box-shadow: 0 1px 0 0 #b71c1c;
 }
 
 @media (max-width:1275px) {
