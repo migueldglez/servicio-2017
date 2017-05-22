@@ -84,7 +84,7 @@ app.on('activate', () => {
 //Enviar mensaje
 
 ipcMain.on('load-page', (event,arg) => {
-  win.loadURL(arg)
+  win.destroy()
 })
 
 //--------------------
