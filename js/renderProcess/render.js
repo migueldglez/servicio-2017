@@ -7,6 +7,7 @@ const url = require('url')
 const change = document.getElementById('change')
 const closeBrows = document.getElementById('closeBrows')
 const recargar = document.getElementById('reload')
+const mini = document.getElementById('minimizar')
 
 var linkUrl = url.format({
     pathname: path.join(__dirname, 'game.html'),
@@ -26,6 +27,12 @@ function reload() {
   win.reload()
 }
 
+function minimizar() {
+  var win = remote.getCurrentWindow()
+  win.minimize();
+}
+
 closeBrows.onclick = cerrar
 recargar.onclick = reload
+mini.onclick = minimizar
 //----------------------
