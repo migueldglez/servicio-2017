@@ -1,0 +1,31 @@
+.modal{
+  height: 80%;
+  max-height: 80% !important;
+  background-image: url('../img/paper_01.jpg');
+  background-size: 100% 100%;
+}
+
+#modalTitle{
+  height: 18%;
+  background-image: url('../img/modal_bg_02.jpg');
+  background-size: 100% 100%;
+}
+
+#vTutorial{
+  width: 90%;
+  margin-left: 5%;
+}
+
+.collapsible-body{
+  background-color: white;
+}
+
+.modal-footer{
+    background-color:  rgba(0, 0, 0, 0) !important;
+}
+
+.modtitle{
+  padding-top: 4% !important;
+  font-family: 'ThousandReasons';
+  font-size: 3.5em;
+}
