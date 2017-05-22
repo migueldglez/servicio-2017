@@ -3,7 +3,6 @@ const puzzle = require('../js/rompecabezas.js')
 
 var _siguiente =  document.getElementById('siguiente')
 var _tips = document.getElementById('tips')
-var _enviar = document.getElementById('enviar')
 var _valor = document.getElementById('respuestas')
 var _resueltas = document.getElementById('resueltas')
 var _score = document.getElementById('score')
@@ -125,13 +124,10 @@ window.onload = () => {
   res.terminos.canM1=0
   res.terminos.canM2=0
   res.pushEcuacion();
-  document.getElementById('igual').innerHTML = "="
 }
 
 
 //Eventos en los distintos botones
-//_siguiente.onclick = ocultar
-_enviar.onclick = mostrar
 _valor.onkeypress = enter
 
 //Variables y funciones exportadas
