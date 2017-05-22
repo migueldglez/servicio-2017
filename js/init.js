@@ -19,4 +19,6 @@ $(document).ready(function(){
       ready: function () {proceso.procSol()},
       complete: function () {btn.ocultar()}
     });
+
+    $('.collapsible').collapsible();
   });
