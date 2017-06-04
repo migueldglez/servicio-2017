@@ -122,28 +122,33 @@
         <h3 class="center-align white-text modtitle">Solución</h3>
       </div>
       <div class="modal-content">
-        <ul class="collapsible popout" data-collapsible="accordion">
-          <li>
-            <div class="collapsible-header">De la funcion : </div>
-            <div class="collapsible-body"><span id="solFun"></span></div>
-          </li>
-          <li>
-            <div class="collapsible-header">Sumar terminos semejantes.</div>
-            <div class="collapsible-body"><span id="solTerSem"></span></div>
-          </li>
-          <li>
-            <div class="collapsible-header">Reune terminos semejantes entre los miembros 1 y 2 </div>
-            <div class="collapsible-body"><span id="reunTerm"></span></div>
-          </li>
-          <li>
-            <div class="collapsible-header">Sumando y Restando terminos semejantes</div>
-            <div class="collapsible-body"><span id="sumTS"></span></div>
-          </li>
-          <li>
-            <div class="collapsible-header">Despejando X:</div>
-            <div class="collapsible-body"><span id="resX"></span></div>
-          </li>
-        </ul>
+        <div class="row">
+          <ul id="pasosUl" class="collapsible popout col m10" data-collapsible="accordion">
+            <li class="active">
+              <div class="collapsible-header active">De la funcion : </div>
+              <div class="collapsible-body"><span id="solFun"></span></div>
+            </li>
+            <li class="hide active">
+              <div class="collapsible-header">Sumar terminos semejantes.</div>
+              <div class="collapsible-body"><span id="solTerSem"></span></div>
+            </li>
+            <li class="hide active">
+              <div class="collapsible-header">Reune terminos semejantes entre los miembros 1 y 2 </div>
+              <div class="collapsible-body"><span id="reunTerm"></span></div>
+            </li>
+            <li class="hide active">
+              <div class="collapsible-header">Sumando y Restando terminos semejantes</div>
+              <div class="collapsible-body"><span id="sumTS"></span></div>
+            </li>
+            <li class="hide active">
+              <div class="collapsible-header">Despejando X:</div>
+              <div class="collapsible-body"><span id="resX"></span></div>
+            </li>
+          </ul>
+          <div class="col s2">
+            <a id="nextStep" class="btn-floating btn-large waves-effect waves-light red "><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+          </div>
+        </div>
       </div>
       <div class="modal-footer">
         <a id="closeSM" class="modal-action modal-close btn-flat">Cerrar</a>
@@ -173,6 +178,7 @@
     <script>require('../materialize/js/materialize.min.js')</script>
     <script>require('../js/init.js')</script>
     <script>window.btn = require('../js/btn.js')</script>
+    <script>require('../js/pasos.js')</script>
     <script type="text/javascript">require('../js/renderProcess/render.js');</script>
     <!-- +++++++++++++++++ -->
 
