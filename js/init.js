@@ -1,5 +1,6 @@
 const btn = require('../js/btn.js');
 const proceso = require('../js/procSolucion');
+const pasos = require('../js/pasos.js');
 
 $(document).ready(function(){
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
@@ -14,11 +15,12 @@ $(document).ready(function(){
       }, 1000);}
     });
 
-
     $('#solucionM').modal({
       ready: function () {proceso.procSol()},
-      complete: function () {btn.ocultar()}
+      complete: function () {
+        btn.ocultar()
+        pasos.resetSteps();
+      }
     });
 
-    $('.collapsible').collapsible();
   });
