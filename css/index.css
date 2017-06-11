@@ -1,0 +1,137 @@
+html,body{
+  width: 100%;
+  height: 150%;
+  overflow-y: hidden !important;
+}
+.row{
+  margin-bottom: 0px;
+}
+.col{
+  padding: 0px 0px !important;
+}
+#s{
+  z-index: 2004 !important;
+}
+#imgLogin{
+  width: 7.5em;
+  height: 7.5em;
+  margin-top: -3.75em;
+  margin-bottom: 1.875em;
+}
+/*---- Intro ----*/
+#intro{
+  width: 100%;
+  height: 50%;
+}
+#intro .center {
+  margin-top: 40%;
+}
+#banner{
+  -webkit-animation-duration: 2s;
+  -webkit-animation-delay: 3s;
+  -webkit-animation-iteration-count: infinite;
+}
+/*----      ----*/
+
+/*---- Sesion ----*/
+#sesion{
+  width: 100%;
+  height: 50%;
+}
+.parallax-container{
+  height: 100%;
+}
+#logoMain {
+  height: 35%;
+  width: 100%;
+}
+#menuMain {
+  height: 55%;
+  width: 100%;
+}
+#menuButtons{
+  margin-top: 5%;
+  overflow: visible;
+}
+#menuButtons li a{
+  margin: .5em 0;
+  padding-top: .6em;
+  padding-left: 1em;
+  padding-right: 1em;
+  font-size: 2em;
+  height: 3em !important;
+}
+#menuButtons li a:hover{
+  padding-top: .7em;
+  padding-left: 1.1em;
+  padding-right: 1.1em;
+  font-size: 2.1em;
+  height: 3.1em !important;
+  background-color: #0277bd;
+}
+#menuButtons li i {
+  font-size: 1.5em;
+}
+#menuButtons li i:hover {
+  font-size: 1.7em;
+}
+/*---- Modal Registro ----*/
+.modal {
+  background-color: rgba(54, 202, 154, 0.62);
+  border-radius: 0;
+}
+::-webkit-scrollbar {
+  width: .8em;
+}
+/*---- Formulario Sesion ----*/
+.iniSesion{
+  padding: 0 .75rem !important;
+}
+.iniSesion label, .iniSesion i{
+  color: #01579b;
+  font-size: 1.2em;
+}
+.iniSesion input[type=text]{
+  border-bottom-color: #01579b;
+}
+.iniSesion input[type=text]:focus + label{
+  color: #b71c1c;
+}
+.iniSesion input[type=text]:focus{
+  border-bottom-color: #b71c1c;
+}
+.iniSesion .prefix.active {
+     color: #b71c1c;
+     font-size: 1.3em;
+ }
+
+/**/
+
+/*---- Formulario Registrar Usuario ----*/
+#regisUser{
+  margin-top: 8%;
+}
+.regisUser{
+  padding: 0 .75rem !important;
+}
+.regisUser label, .regisUser i{
+  color: #b71c1c;
+  font-size: 1.2em;
+}
+.regisUser input[type=text]{
+  border-bottom-color: #b71c1c;
+}
+.regisUser input[type=text]:focus + label{
+  color: #01579b;
+}
+.regisUser input[type=text]:focus{
+  border-bottom-color: #01579b;
+}
+.regisUser .prefix.active {
+     color:  #01579b;
+     font-size: 1.3em;
+ }
+
+/**/
+
+/**/
