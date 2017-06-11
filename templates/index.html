@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>index</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,400italic,700italic,700" rel="stylesheet" type="text/css">
+    <link href="../materialize/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="../css/fonts.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/animate.css">
+  </head>
+  <body>
+    <div class="row" id="intro">
+      <div class="parallax-container">
+        <div class="center">
+          <h2 id="banner"class="animated infinite pulse">Presiona para iniciar</h2>
+          <a href='#sesion' class="btn waves-effect white grey-text darken-text-2" id="iniciar">Iniciar</a>
+        </div>
+        <div class="parallax"><img src="../img/fondos/school.jpg"></div>
+      </div>
+    </div>
+
+    <div class="row scrollspy" id="sesion">
+      <div class="parallax-container">
+
+        <div class="row" id="logoMain"></div>
+        <div class="row" id="menuMain">
+          <ul class="center hide" id="menuButtons">
+            <li>
+              <a class="waves-effect waves-light btn-large" id="iniGame">
+                <i class="material-icons right">play_arrow</i>INICIAR
+              </a>
+            </li>
+            <li>
+              <a class="waves-effect waves-light btn-large">
+                <i class="material-icons left">settings</i>CONFIGURAR
+              </a>
+            </li>
+            <li>
+              <a class="waves-effect waves-light btn-large" id="closeGame">
+                <i class="material-icons right">power_settings_new</i>SALIR
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="parallax"><img src="../img/fondos/school_03.jpg"></div>
+      </div>
+    </div>
+
+    <div class="modal" id="registro">
+      <div class="modal-content">
+        <div class="row" id="iniSesion">
+          <form class="col m12">
+            <div class="row">
+              <div class="col m12"><h4 class="center-align">Iniciar Sesión</h4></div>
+            </div>
+            <div class="row">
+              <div class="input-field iniSesion col m6">
+                <i class="material-icons prefix">perm_identity</i>
+                <input id="usuario" type="text" class="validate">
+                <label for="usuario">Usuario</label>
+              </div>
+              <div class="input-field iniSesion col m6">
+                <i class="fa fa-id-card-o prefix" aria-hidden="true"></i>
+                <input id="pasww" type="text" class="validate">
+                <label for="pasww">No. Control</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="center"><a class="btn waves-effect light-blue darken-4" id="subSesion">Iniciar Sesion</a></div>
+            </div>
+          </form>
+        </div>
+        <div class="row" id="regisUser">
+          <form class="col m12">
+            <div class="row">
+              <div class="col m12"><h4 class="center-align">Registrarse</h4></div>
+            </div>
+            <div class="row">
+              <div class="input-field regisUser col m4">
+                <i class="prefix fa fa-user-o" aria-hidden="true"></i>
+                <input id="nombre" type="text" class="validate">
+                <label for="nombre">Nombre(s)</label>
+              </div>
+              <div class="input-field regisUser col m4">
+                <i class="fa fa-pencil prefix" aria-hidden="true"></i>
+                <input id="apPaterno" type="text" class="validate">
+                <label for="apPaterno">Apellido Paterno</label>
+              </div>
+              <div class="input-field regisUser col m4">
+                <i class="fa fa-pencil prefix" aria-hidden="true"></i>
+                <input id="apMaterno" type="text" class="validate">
+                <label for="apMaterno">Apellido Materno</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field regisUser col m6">
+                <i class="material-icons prefix">perm_identity</i>
+                <input id="nombre" type="text" class="validate">
+                <label for="nombre">Usuario</label>
+              </div>
+              <div class="input-field regisUser col m6">
+                <i class="fa fa-id-card-o prefix" aria-hidden="true"></i>
+                <input id="apPaterno" type="text" class="validate">
+                <label for="apPaterno">Num. Control</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="center"><a class="btn waves-effect red darken-3" id="subRegis">Registrarse</a></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ++++ Scripts ++++ -->
+    <script>window.$ = window.jQuery = require('jquery');</script>
+    <script>window.$.Velocity=window.jQuery.Velocity=require("materialize-css/js/velocity.min.js");</script>
+    <script>require('../materialize/js/materialize.min.js')</script>
+    <script>require('../js/intro-init.js')</script>
+  </body>
+</html>
