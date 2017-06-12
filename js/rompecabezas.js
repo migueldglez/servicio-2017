@@ -1,5 +1,6 @@
 const res = require('../js/resolucion.js');
-const PUZZLE_DIFFICULTY = 3
+const confeti = require('../js/confeti.js');
+const PUZZLE_DIFFICULTY = 2
 const PUZZLE_HOVER_TINT = '#378A37';
 
 var _efecto = document.getElementById('efecto') //guarda la etiqueta de audio de efectos de sonio
@@ -278,7 +279,24 @@ function gameOver(){
     _ban.intent=0//actualiza los intentos para mover piezas
     _intentos.innerHTML = _ban.intent
     initPuzzle();
+    modalScoreFinal()
 }
+
+function modalScoreFinal() {
+  $(document).ready(function(){
+    $('#finScore').modal({
+      ready: function () {
+        confeti.iniConfeti()
+      },
+      complete: function () {
+        confeti.stopConfeti()
+      }
+    });
+    $('#finScore').modal('open')
+  })
+}
+
+
 
 //document.getElementById('reinicio').onclick = gameOver
 
