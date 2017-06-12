@@ -8,11 +8,12 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,400italic,700italic,700" rel="stylesheet" type="text/css">
 
     <link href="../materialize/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-    <link href="../css/estilos.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="../css/main.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link href="../css/fonts.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet"/>
     <link href="../css/modals_style.css" type="text/css" rel="stylesheet"/>
     <link rel="stylesheet" href="../css/animate.css">
+    <link rel="stylesheet" href="../css/confeti.css" type="text/css">
   </head>
   <body>
     <!-- ++++ Indefinido ++++ -->
@@ -172,6 +173,19 @@
     </div>
     <!-- ++++++++++++++++++++++++++++ -->
 
+    <!-- ++++ Efecto Confeti ++++ -->
+    <canvas id="confeti"></canvas>
+
+    <div id="finScore" class="modal">
+      <div class="modal-content">
+        <h4>Modal Header</h4>
+        <p>A bunch of text</p>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+      </div>
+    </div>
+
     <!-- ++++ Scripts ++++ -->
     <script>window.$ = window.jQuery = require('jquery');</script>
     <script>window.$.Velocity=window.jQuery.Velocity=require("materialize-css/js/velocity.min.js");</script>
@@ -180,6 +194,7 @@
     <script>window.btn = require('../js/btn.js')</script>
     <script>require('../js/pasos.js')</script>
     <script type="text/javascript">require('../js/renderProcess/render.js');</script>
+    <script>require('../js/confeti.js')</script>
     <!-- +++++++++++++++++ -->
 
   </body>
