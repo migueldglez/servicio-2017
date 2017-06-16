@@ -24,7 +24,7 @@ $(document).ready(function(){
   $('#iniciar').on('click',function () {
     setTimeout(function () {
       $('#registro').modal('open');
-    },355)
+    },345)
   });
 
   $('#subSesion').on('click',function () {

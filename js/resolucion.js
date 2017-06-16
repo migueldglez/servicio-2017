@@ -60,6 +60,4 @@ exports.pushEcuacion = () => {
   document.getElementById('ecuaMath').innerHTML = cadena
 }
 
-
-
 exports.terminos = _terminos;

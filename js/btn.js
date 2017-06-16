@@ -16,10 +16,11 @@ res.terminos.goods = 0
 res.terminos.global = 0
 res.terminos.score = 0
 
-//mustra los botones siguiente y tips de acuerdo al numero
+//muestra los botones siguiente y tips de acuerdo al numero
 //de errores
 function mostrar() {
   if(_valor.value==0 && !_valor.value==''){
+    _valor.disabled = true
     iconAnimation(1)
     res.terminos.canM1=0
     res.terminos.canM2=0
@@ -40,7 +41,7 @@ function mostrar() {
   }
 }
 
-//Resetea algunas propiedades de los botonoes
+//Resetea algunas propiedades de los botones
 function resetCss() {
   _valor.value = ''
   res.terminos.errs = 0

@@ -94,7 +94,6 @@ function allContNumber(arreglo) {
 //que ningun miembro sea totalmente de un tipoNum
 //determinado de terminos, si el evento del boton siguiente es lanzado
 //regresa una ecuacion con la misma cantidad de terminos que la anterior
-
 exports.ecuacion =  (cant1,cant2) =>{
   var miembros = [miembro(cant1),miembro(cant2)]
   var arr1 = miembros[0].split(' ')
