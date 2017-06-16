@@ -31,6 +31,12 @@ var _mouse
 
 window.onload = init
 
+function effectSound(src,vol) {
+  _efecto.src = src
+  _efecto.volume = vol
+  _efecto.play()
+}
+
 function init() {
   _img = new Image()
   _img.addEventListener('load',onImage,false)
@@ -169,11 +175,8 @@ function onPuzzleClick(e){
     }
   }else{
     //efecto de sonido de error de movimiento
-    _efecto.src = "../effects/Computer-Error.mp3"
-    _efecto.volume = .3
-    _efecto.play()
+    effectSound("../effects/Computer-Error.mp3",.3)
   }
-
 
 }
 
@@ -248,6 +251,9 @@ function pieceDropped(e){
         _currentDropPiece.xPos2 = tmp.xPos2;
         _currentDropPiece.yPos2 = tmp.yPos2;
         _ban.intent--//actualiza los intentos para mover piezas
+        if (_ban.intent==0) {
+          _respuesta.disabled = false
+        }
         _intentos.innerHTML = _ban.intent
     }
     resetPuzzleAndCheckWin();
@@ -272,22 +278,23 @@ function resetPuzzleAndCheckWin(){
 }
 
 function gameOver(){
-    _canvas.onmousedown = null;
-    _canvas.onmousemove = null;
-    _canvas.onmouseup = null;
-    res.terminos.goods = 0
-    _ban.intent=0//actualiza los intentos para mover piezas
-    _intentos.innerHTML = _ban.intent
-    initPuzzle();
-    modalScoreFinal()
+  effectSound("../effects/Ta Da-Sound.mp3",.3)
+  _canvas.onmousedown = null;
+  _canvas.onmousemove = null;
+  _canvas.onmouseup = null;
+  res.terminos.goods = 0
+  _ban.intent=0//actualiza los intentos para mover piezas
+  _intentos.innerHTML = _ban.intent
+  initPuzzle();
+  confeti.iniConfeti()
+  setTimeout(modalScoreFinal,1500);
 }
 
 function modalScoreFinal() {
   $(document).ready(function(){
     $('#finScore').modal({
-      ready: function () {
-        confeti.iniConfeti()
-      },
+      inDuration: 300,
+      outDuration: 300,
       complete: function () {
         confeti.stopConfeti()
       }
@@ -296,9 +303,6 @@ function modalScoreFinal() {
   })
 }
 
-
-
-//document.getElementById('reinicio').onclick = gameOver
 
 exports.init = init();
 exports.canv = _canvas
