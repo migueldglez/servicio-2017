@@ -3,7 +3,7 @@
 html,body{
   width: 100%;
   height: 100%;
-  background-image: url("../img/main_fondo.jpg");
+  background-image: url("../img/main_fondo_03.jpg");
   background-size: 100% 100%;
 }
 .row{
@@ -34,6 +34,10 @@ html,body{
 .btnMain a{
   margin-right: 4%;
   background-color:  rgba(0, 0, 0, 0) !important;
+  box-shadow: 0 0 0 0 !important;
+}
+.btnMain a:hover + i{
+  color: red;
 }
 
 /**** Respuestas ****/
