@@ -9,9 +9,6 @@ html,body{
 .col{
   padding: 0px 0px !important;
 }
-#s{
-  z-index: 2004 !important;
-}
 #imgLogin{
   width: 7.5em;
   height: 7.5em;
@@ -67,7 +64,7 @@ html,body{
   padding-right: 1.1em;
   font-size: 2.1em;
   height: 3.1em !important;
-  background-color: #0277bd;
+  background-color: #0d47a1 !important;
 }
 #menuButtons li i {
   font-size: 1.5em;
@@ -75,14 +72,24 @@ html,body{
 #menuButtons li i:hover {
   font-size: 1.7em;
 }
+
 /*---- Modal Registro ----*/
 .modal {
   background-color: rgba(54, 202, 154, 0.62);
   border-radius: 0;
 }
-::-webkit-scrollbar {
-  width: .8em;
+#registro::-webkit-scrollbar {
+  width: .5em;
 }
+#registro::-webkit-scrollbar-thumb {
+  background-color: rgba(129, 199, 132, 0.62);
+  outline: 1px solid black;
+}
+#registro::-webkit-scrollbar-button{
+  background-color: rgba(54, 202, 154, 0.8);
+  width: 1em;
+}
+#registro::-webkit-scrollbar-track{background-color: rgba(255, 255, 255, 0.62);}
 /*---- Formulario Sesion ----*/
 .iniSesion{
   padding: 0 .75rem !important;
