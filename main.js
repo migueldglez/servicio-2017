@@ -31,7 +31,6 @@ function createWindow (width,height) {
 
   win.once('ready-to-show', () => {
     win.show()
-    setSett()
   })
   //win.setMenu(null); Quita el menu por default
 
@@ -59,6 +58,7 @@ function createWindow (width,height) {
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.on('ready', ()=>{
+  setSett()
   const {width, height} = electron.screen.getPrimaryDisplay().workAreaSize;
   createWindow(width, height)
 
