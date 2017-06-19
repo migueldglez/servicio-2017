@@ -29,8 +29,6 @@ var _currentDropPiece
 
 var _mouse
 
-window.onload = init
-
 function effectSound(src,vol) {
   _efecto.src = src
   _efecto.volume = vol
@@ -282,7 +280,7 @@ function gameOver(){
   _canvas.onmousedown = null;
   _canvas.onmousemove = null;
   _canvas.onmouseup = null;
-  res.terminos.goods = 0
+  res.setData('goods',0)
   _ban.intent=0//actualiza los intentos para mover piezas
   _intentos.innerHTML = _ban.intent
   initPuzzle();
@@ -305,5 +303,12 @@ function modalScoreFinal() {
 
 
 exports.init = init();
-exports.canv = _canvas
-exports._ban = _ban
+
+exports.getMoves = function (index) {
+  return _ban[index]
+}
+exports.setMoves = function (index,data) {
+  _ban[index] = data
+}
+
+//

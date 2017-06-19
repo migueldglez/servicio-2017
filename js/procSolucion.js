@@ -8,20 +8,18 @@ var _resX = document.getElementById('resX')
 var aux = ['','','','']
 
 function procSolucion() {
-  _func.innerHTML = res.terminos.m1 + ' = '+res.terminos.m2
+  _func.innerHTML = res.getData('m1') + ' = '+res.getData('m2')
   _sumTer.innerHTML = sumTerm()
   _reunTer.innerHTML = reunTerm()
-  _sumTS.innerHTML = res.terminos.x+'x'+' = '+res.terminos.c
-  _resX.innerHTML = 'x = '+res.terminos.c+'/'+res.terminos.x
+  _sumTS.innerHTML = res.getData('x')+'x'+' = '+res.getData('c')
+  _resX.innerHTML = 'x = '+res.getData('c')+'/'+res.getData('x')
 }
 
 function sumTerm() {
-
-
-  aux[0]= (res.terminos.m1X===0)? '': res.terminos.m1X
-  aux[1]= (res.terminos.m1I===0)? 0: res.terminos.m1I
-  aux[2]= (res.terminos.m2X===0)? '': res.terminos.m2X
-  aux[3]= (res.terminos.m2I===0)? 0: res.terminos.m2I
+  aux[0]= (res.getData('m1X')===0)? '': res.getData('m1X')
+  aux[1]= (res.getData('m1I')===0)? 0: res.getData('m1I')
+  aux[2]= (res.getData('m2X')===0)? '': res.getData('m2X')
+  aux[3]= (res.getData('m2I')===0)? 0: res.getData('m2I')
 
   var s1 = (aux[1]>=0&&aux[0]!='')? '+':''
   var s2 = (aux[3]>=0&&aux[2]!='')? '+':''
@@ -44,6 +42,6 @@ function reunTerm() {
 }
 
 
-exports.procSol = ()=>{
+exports.procSol =function (){
   procSolucion()
 }

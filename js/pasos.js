@@ -38,9 +38,6 @@ exports.resetSteps = function() {
   _nextStep.classList.remove('hide')
 }
 
-
 _nextStep.onclick = showNextStep
-
-exports.steps = _steps
 
 //

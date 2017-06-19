@@ -18,9 +18,9 @@ $(document).ready(function(){
     $('#solucionM').modal({
       ready: function () {proceso.procSol()},
       complete: function () {
-        btn.ocultar()
+        btn.updateEcua()
         pasos.resetSteps();
       }
     });
-    
+
   });
