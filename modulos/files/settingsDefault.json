@@ -1,0 +1,11 @@
+{
+  "volEffects" : 10,
+  "stateEffects" : true,
+  "userLog" : false,
+  "userSign" : false,
+  "userData" : {
+    "name": "",
+    "lastName": "",
+    "userName": ""
+  }
+}
