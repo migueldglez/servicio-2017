@@ -9,8 +9,11 @@
     <link href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet"/>
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/animate.css">
+    <link rel="stylesheet" href="../noUiSlider/nouislider.css">
   </head>
   <body>
+
+    <!-- ++++ Intro aplicación ++++ -->
     <div class="row" id="intro">
       <div class="parallax-container">
         <div class="center">
@@ -20,7 +23,9 @@
         <div class="parallax"><img src="../img/fondos/school.jpg"></div>
       </div>
     </div>
+    <!-- ++++ ++++++++++++++++ ++++ -->
 
+    <!-- ++++ Menu aplicación ++++ -->
     <div class="row scrollspy" id="sesion">
       <div class="parallax-container">
 
@@ -33,7 +38,7 @@
               </a>
             </li>
             <li>
-              <a class="waves-effect waves-light btn-large blue accent-3 z-depth-5">
+              <a class="waves-effect waves-light btn-large blue accent-3 z-depth-5" id="openConfig">
                 <i class="material-icons left">settings</i>CONFIGURAR
               </a>
             </li>
@@ -48,7 +53,9 @@
         <div class="parallax"><img src="../img/fondos/school_03.jpg"></div>
       </div>
     </div>
+    <!-- ++++ +++++++++++++++ ++++ -->
 
+    <!-- ++++ Modal Inicio Sesion ++++ -->
     <div class="modal" id="registro">
       <div class="modal-content">
         <div class="row" id="iniSesion">
@@ -114,12 +121,44 @@
         </div>
       </div>
     </div>
+    <!-- ++++ ++++++++++++++++++ ++++ -->
 
+    <!-- ++++ Modal Configuración ++++ -->
+    <div class="modal" id="configs">
+      <div class="modal-content">
+        <div class="row">
+          <form class="col m12">
+            <div class="row">
+              <div class="col m12"><h4 class="center-align">Configuraciones</h4></div>
+            </div>
+            <div class="row">
+              <div class="col m10 offset-m1">
+                <div class="switch">
+                  <span>Efectos de Sonido </span>
+                  <label>Off <input type="checkbox" checked><span class="lever"></span> On</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col m4 offset-m1"><span>Volumen de Sonido</span></div>
+              <div class="col m6">
+                <div id="volRange"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="center"><a class="btn waves-effect light-blue darken-4" id="closeConfig">Aceptar</a></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- ++++ +++++++++++++++++++ ++++ -->
 
     <!-- ++++ Scripts ++++ -->
     <script>window.$ = window.jQuery = require('jquery');</script>
     <script>window.$.Velocity=window.jQuery.Velocity=require("materialize-css/js/velocity.min.js");</script>
     <script>require('../materialize/js/materialize.min.js')</script>
+    <script>require('../noUiSlider/nouislider.min.js')</script>
     <script>require('../js/intro-init.js')</script>
   </body>
 </html>
