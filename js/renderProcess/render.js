@@ -1,9 +1,6 @@
 const {ipcRenderer} = require('electron')
 const remote = require('electron').remote
 
-const path = require('path')
-const url = require('url')
-
 const closeBrows = document.getElementById('closeBrows')
 const recargar = document.getElementById('reload')
 const mini = document.getElementById('minimizar')
