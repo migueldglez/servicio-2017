@@ -37,7 +37,7 @@ function setFileJSON() {
  * @param {obj} objeto javascript
  **/
 function creatJSON(obj) {
-  storage.set('userData/settings', obj)
+  storage.set('storage/settings', obj)
   .then(() => {
     console.log('The file was successfully written to the storage');
   })
@@ -59,7 +59,7 @@ function creatJSON(obj) {
  * @param {obj} objeto javascript
  **/
 module.exports = ()=>{
-  storage.isPathExists('userData/settings.json', (itDoes) => {
+  storage.isPathExists('storage/settings.json', (itDoes) => {
     if (itDoes) {
       console.log('pathDoesExists !')
     }else {
