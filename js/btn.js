@@ -3,7 +3,7 @@ const puzzle = require('../js/rompecabezas.js')
 
 var _siguiente =  document.getElementById('siguiente')
 var _tips = document.getElementById('tips')
-var _valor = document.getElementById('respuestas')
+var _answer = document.getElementById('respuestas')
 var _resueltas = document.getElementById('resueltas')
 var _score = document.getElementById('score')
 var _intentos = document.getElementById('intentos')
@@ -11,81 +11,90 @@ var _icono = document.getElementById('bien')
 var _efecto = document.getElementById('efecto')
 var _closeSM = document.getElementById('closeSM')
 
-res.terminos.errs = 0
-res.terminos.goods = 0
-res.terminos.global = 0
-res.terminos.score = 0
-
-//muestra los botones siguiente y tips de acuerdo al numero
-//de errores
-function mostrar() {
-  if(_valor.value==0 && !_valor.value==''){
-    _valor.disabled = true
+/**
+ * @summary Procesa la respuesta enviada
+ *
+ **/
+function sendAnswer() {
+  if(_answer.value==0 && !_answer.value==''){
+    _answer.disabled = true
     iconAnimation(1)
-    res.terminos.canM1=0
-    res.terminos.canM2=0
-    res.pushEcuacion()
-    resetCss()
+    updateCorrects()
     setIntentos()
     _intentos.innerHTML = puzzle._ban.intent
   }else{
     iconAnimation(0)
-    if(res.terminos.score>0)res.terminos.score-=50
-    _score.innerHTML = res.terminos.score + ' Exp'
-    res.terminos.errs = (res.terminos.errs +1)
-    if(res.terminos.errs===3){
+    updateErrors(1)
+  }
+}
+
+/**
+ * @summary Actualiza las respuestas correctas
+ *
+ **/
+function updateCorrects() {
+  res.modData('correct',1)
+  res.modData('global',1)
+  res.modData('score' ,100)
+  _resueltas.innerHTML = res.getData('global')
+  _score.innerHTML = res.getData('score') + ' Exp'
+  updateErrors(0)
+}
+
+/**
+ * @summary Actualiza los errores del usuario
+ **/
+function updateErrors(data) {
+  if (data==0) {
+    res.setData('errors',0)
+  }else {
+    if(res.getData('score')>0)res.modData('score',-50)
+    _score.innerHTML = res.getData('score') + ' Exp'
+    res.modData('errors',1)
+  }
+  checkErrors()
+}
+
+/**
+ * @summary Comprueba los errores del usuario
+ **/
+function checkErrors() {
+  if(res.getData('errors')==0){
+    _answer.value = ''
+    _tips.classList.add('hide')
+    _siguiente.classList.add('hide')
+    res.setEcuacion()
+  }else{
+    if(res.getData('errors')===3){
       _tips.classList.remove('hide')
-    }else if(res.terminos.errs===5){
+    }else if(res.getData('errors')===5){
       _siguiente.classList.remove('hide')
     }
   }
 }
 
-//Resetea algunas propiedades de los botones
-function resetCss() {
-  _valor.value = ''
-  res.terminos.errs = 0
-  _tips.classList.add('hide')
-  _siguiente.classList.add('hide')
-  res.terminos.goods++
-  res.terminos.global++
-  res.terminos.score+=100
-  _resueltas.innerHTML = res.terminos.global
-  _score.innerHTML = res.terminos.score + ' Exp'
-}
-
 //Pone el numero de intentos que se tiene para mover piezas
 function setIntentos() {
-  switch (res.terminos.goods) {
+  switch (res.getData('goods')) {
     case 1:
-      puzzle._ban.intent = 1
+      puzzle.setData('intent',1)
       break;
     case 2:
-      puzzle._ban.intent = 2
+      puzzle.setData('intent',2)
       break;
     case 3:
-      puzzle._ban.intent = 3
+      puzzle.setData('intent',3)
       break;
     default:
-      puzzle._ban.intent = 4
+      puzzle.setData('intent',4)
   }
-}
-
-//Cuando se ingresa una respuesta valida se ocultan los botones
-//siguiente y tips
-function ocultar() {
-  res.pushEcuacion()
-  _valor.value = ''
-  _tips.classList.add('hide')
-  _siguiente.classList.add('hide')
-  res.terminos.errs = 0
 }
 
 //Captura el evento por teclas dentro del input respuestas,
 //si es ENTER lanza la funcion mostrar()
 function enter(e) {
   if (e.keyCode==13){
-    mostrar()
+    sendAnswer()
     return false
   }
 }
@@ -97,7 +106,6 @@ function iconAnimation(num) {
   var mal = ['red-text', 'text-darken-4']
   var clases = (num==1) ? bien : mal
   var a_src = (num==1) ? '../effects/Correct-answer.mp3' : '../effects/Wrong-answer-sound-effect.mp3'
-
 
   _icono.innerHTML = icono
   for (i of clases) {
@@ -119,20 +127,16 @@ function iconAnimation(num) {
 
 }
 
-//Al cargas la pagina game.html lanza la funcion pushEcuacion()
+//Al cargas la pagina game.html lanza la funcion setEcuacion()
 //y pone el simbolo igual entre los terminos
 window.onload = () => {
-  res.terminos.canM1=0
-  res.terminos.canM2=0
-  res.pushEcuacion();
+  res.setEcuacion();
 }
 
-
 //Eventos en los distintos botones
-_valor.onkeypress = enter
+_answer.onkeypress = enter
 
 //Variables y funciones exportadas
-exports.t = res.terminos
-exports.ocultar =  function () {
-  ocultar()
+exports.updateEcua =  function () {
+  updateErrors(0)
 }
