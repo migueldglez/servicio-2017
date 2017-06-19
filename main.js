@@ -5,7 +5,7 @@ const path = require('path')
 const url = require('url')
 const {ipcMain} = require('electron')
 const os = require('os');
-
+const setSett = require('./modulos/setSettings.js');
 
 
 // Keep a global reference of the window object, if you don't, the window will
@@ -31,6 +31,7 @@ function createWindow (width,height) {
 
   win.once('ready-to-show', () => {
     win.show()
+    setSett()
   })
   //win.setMenu(null); Quita el menu por default
 
