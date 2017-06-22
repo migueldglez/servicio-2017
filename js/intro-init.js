@@ -39,6 +39,12 @@ $(document).ready(function(){
     endingTop: '15%',
     outDuration: 300
   });
+  $('#iniConf').modal({
+    dismissible:false,
+    opacity: .7,
+    endingTop: '15%',
+    outDuration: 300
+  })
 
   //Abrir modals dinamicamente
   $('#iniciar').on('click',function () {
@@ -51,6 +57,11 @@ $(document).ready(function(){
       $('#configs').modal('open');
     },200)
   })
+  $('#iniGame').on('click',function () {
+    setTimeout(function () {
+      $('#iniConf').modal('open');
+    },200)
+  })
 
   //Cerrar modals dinamicamente
   $('#subSesion').on('click',function () {
@@ -61,6 +72,7 @@ $(document).ready(function(){
   });
 
   //Iniciar juego principal
+  /*
   $('#iniGame').on('click',function () {
     var linkUrl = url.format({
         pathname: path.join(__dirname,'../templates/main.html'),
@@ -69,7 +81,7 @@ $(document).ready(function(){
       })
 
       ipcRenderer.send('load-page', linkUrl)
-  })
+  })*/
 
   //Cerrar aplicación
   $('#closeGame').on('click',function () {
