@@ -73,10 +73,6 @@ exports.setData = function (index,data) {
   _terminos[index] = data
 }
 exports.modData = function (index,data) {
-  if (data>0) {
-    _terminos[index]+=data
-  }else{
-    _terminos[index]-=data
-  }
+  _terminos[index]+=data
 
 }
