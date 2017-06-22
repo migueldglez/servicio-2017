@@ -280,7 +280,7 @@ function gameOver(){
   _canvas.onmousedown = null;
   _canvas.onmousemove = null;
   _canvas.onmouseup = null;
-  res.setData('goods',0)
+  res.setData('correct',0)
   _ban.intent=0//actualiza los intentos para mover piezas
   _intentos.innerHTML = _ban.intent
   initPuzzle();
