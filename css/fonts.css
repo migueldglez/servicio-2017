@@ -53,16 +53,21 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Titulos del canvas */
 #Canvas h4, #Canvas h5{
   font-family: 'ThousandReasons';
   text-shadow: .1em .1em 0.2em rgba(0, 0, 0,1);
 }
+
+/* Fuente de letra del titulo del modal registro */
 #registro h4, #configs h4{
   font-family: 'TheConsion';
   font-size: 3em;
   color: white;
   text-shadow: .1em .1em 0.2em rgba(0, 0, 0,1);
 }
+
+/* Titulo de la pantalla inicial */
 #banner{
   font-size: 5em;
   font-weight: 300;
@@ -72,6 +77,7 @@
   text-shadow: .1em .1em 0.2em rgba(0, 0, 0,1);
 }
 
+/* Fuentes para letras del modal configuraciones */
 #configs form .row .col:first-child span:first-child {
   margin-right: 1em;
   font-family: 'Mathematical';

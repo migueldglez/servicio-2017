@@ -1,3 +1,4 @@
+/* Estilos para modals en el main.html */
 .modal{
   height: 80%;
   max-height: 80% !important;
@@ -5,24 +6,29 @@
   background-size: 100% 100%;
 }
 
+/* Estilos para los titulos del modal  */
 #modalTitle{
   height: 18%;
   background-image: url('../img/modals/backg_04.jpg');
 }
 
+/* Estilos del video tutorial */
 #vTutorial{
   width: 90%;
   margin-left: 5%;
 }
 
+/* Estilos para el cuerpo de los colapsibles*/
 .collapsible-body{
   background-color: white;
 }
 
+/* Estilos del pie de pagina de los modals */
 .modal-footer{
     background-color:  rgba(0, 0, 0, 0) !important;
 }
 
+/* Estilos y fuentes de letras para los titulos de los modals */
 .modtitle{
   padding-top: 4% !important;
   font-family: 'ThousandReasons';
@@ -30,17 +36,16 @@
   text-shadow: .1em .1em 0.2em rgba(0, 0, 0,1);
 }
 
+/* Estilos del boton siguiente paso */
 #nextStep{
   margin-top: 5em;
   margin-left: 1.5em;
 }
 
 /* ++++ Colapsible ++++*/
+
+/* Estilos del modal solucionM*/
 #solucionM #pasosUl h5 {
   font-size: 2em !important;
 }
-
-/* ++++ Botones del modal ++++ */
-
-
 /* ++++++++*/
