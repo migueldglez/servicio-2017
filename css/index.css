@@ -159,4 +159,40 @@ body{
   margin-top: 1.5em;
 }
 
+/* Modal Opciones de Juego */
+#opcIni{
+  background-color: rgba(54, 179, 59, 0.95);
+  border-radius: 0;
+}
+#opcIni .modal-footer {
+  background-color: transparent;
+}
+#opcIni .modal-footer a{
+  color: white;
+}
+#opcIni .modal-footer a:first-child:hover{
+  background-color: rgba(244, 67, 54, 0.67);
+}
+#opcIni .modal-footer a:last-child:hover{
+  background-color: rgba(33, 150, 244, 0.67);
+}
+#opcIni .row p {
+  margin-right: .5em;
+  color: white;
+}
+#opcIni [type="radio"].with-gap:checked+label:after {
+    border: 2px solid #eeff41;
+}
+#opcIni [type="radio"]:checked+label:after, [type="radio"].with-gap:checked+label:after {
+    background-color: #eeff41;
+}
+[type="radio"]:checked+label:after,
+[type="radio"].with-gap:checked+label:before,
+[type="radio"].with-gap:checked+label:after {
+    border: 2px solid #eeff41;
+}
+
+
+
+
 /**/
