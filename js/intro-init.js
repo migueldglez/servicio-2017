@@ -39,9 +39,9 @@ $(document).ready(function(){
     endingTop: '15%',
     outDuration: 300
   });
-  $('#iniConf').modal({
+  $('#opcIni').modal({
     dismissible:false,
-    opacity: .7,
+    opacity: .2,
     endingTop: '15%',
     outDuration: 300
   })
@@ -59,7 +59,7 @@ $(document).ready(function(){
   })
   $('#iniGame').on('click',function () {
     setTimeout(function () {
-      $('#iniConf').modal('open');
+      $('#opcIni').modal('open');
     },200)
   })
 

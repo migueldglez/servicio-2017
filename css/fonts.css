@@ -60,7 +60,7 @@
 }
 
 /* Fuente de letra del titulo del modal registro */
-#registro h4, #configs h4{
+#registro h4, #configs h4, #opcIni h4{
   font-family: 'TheConsion';
   font-size: 3em;
   color: white;
@@ -92,5 +92,16 @@
   text-shadow: .1em .1em 0.2em rgba(0, 0, 0,1);
 }
 
+/* Fuentes para letras del modal opciones del juego */
+#opcIni span {
+  font-family: 'Mathematical';
+  font-size: 2.2em;
+  color: white;
+  text-shadow: .1em .1em 0.2em rgba(0, 0, 0,1);
+}
+#opcIni .row p label{
+  color: white;
+  text-shadow: .1em .1em 0.2em rgba(0, 0, 0,1);
+}
 
 /**/
